@@ -16,6 +16,7 @@ body {
   align-items: center;
   height: 100vh;
   padding: 20px;
+  box-sizing: border-box;
 }
 
 /* Centered GIF */
@@ -62,11 +63,8 @@ button:hover {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-top: auto;
-}
-
-.nav-btn {
-  width: 40%;
+  position: absolute;
+  bottom: 20px;
 }
 
 .hidden {
