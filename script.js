@@ -85,6 +85,13 @@ function goToPage(page) {
   loadPage();
 }
 
+// Handle choice buttons on Page 2
+function handleChoice(choice) {
+  if (choice === 1 || choice === 2) {
+    goToPage(2); // Navigate to page 3 after a choice is made
+  }
+}
+
 // Handle "Yes" action
 function handleYes() {
   goToPage(4);
