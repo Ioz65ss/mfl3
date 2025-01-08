@@ -10,10 +10,17 @@ let currentPage = 0;
 
 function renderPage(index) {
   const app = document.getElementById('app');
+
+  // Ensure the page index is within bounds
+  if (index < 0 || index >= pages.length) {
+    console.error('Invalid page index');
+    return;
+  }
+
   const page = pages[index];
   app.innerHTML = `
     <div>
-      <img src="${page.gif}" alt="GIF">
+      <img src="${page.gif}" alt="GIF" class="gif">
       <p>${page.content}</p>
       ${page.options ? renderOptions(page.options) : ''}
       <div class="navigation">
@@ -34,13 +41,17 @@ function navigate(direction) {
 }
 
 function handleOption(optionIndex) {
-  // Handle Yes/No and other logic
-  if (pages[currentPage].options[optionIndex] === 'No') {
+  const page = pages[currentPage];
+  const selectedOption = page.options[optionIndex];
+
+  if (selectedOption === 'No') {
     alert('No button moved!');
   } else {
     navigate(1); // Move to the next page
   }
 }
 
-// Initialize the first page
-renderPage(currentPage);
+// Initialize the first page when DOM is fully loaded
+document.addEventListener('DOMContentLoaded', () => {
+  renderPage(currentPage);
+});
