@@ -1,50 +1,72 @@
+/* General Styling */
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #FFD1DC, #E1C4FF);
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #ffe6f0;
+  color: #333;
+  text-align: center;
+}
+
+/* App Container */
+#app {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  color: #333;
+  padding: 20px;
 }
 
-#app {
-  text-align: center;
-  width: 80%;
-  max-width: 500px;
-}
-
-img {
-  max-width: 100%;
+/* Centered GIF */
+.center {
+  max-width: 80%;
+  height: auto;
+  margin: 20px 0;
   border-radius: 10px;
 }
 
-p {
-  font-size: 1.2em;
+/* Text Content */
+.text {
+  font-size: 1.5em;
+  margin: 20px 0;
+  color: #e75480;
+}
+
+/* Buttons Container */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   margin: 20px 0;
 }
 
-.nav-button, .action-button {
+/* Button Styling */
+button {
   padding: 10px 20px;
   font-size: 1em;
-  margin: 10px;
+  background-color: #ff66b2;
+  color: white;
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  background-color: #FFB6C1;
-  color: white;
   transition: background-color 0.3s;
 }
 
-.nav-button:hover, .action-button:hover {
-  background-color: #FF69B4;
+button:hover {
+  background-color: #e75480;
 }
 
-#buttons {
+/* Navigation Buttons */
+.nav-buttons {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: auto;
+}
+
+.nav-btn {
+  width: 40%;
 }
 
 .hidden {
