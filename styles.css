@@ -1,18 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #fef4e4;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fde8d9; /* Light peach color */
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   overflow: hidden;
+  color: #4a4a4a; /* Soft dark gray for text */
 }
 
 #app {
   text-align: center;
   width: 90%;
-  max-width: 500px;
+  max-width: 600px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for the container */
+  border-radius: 15px; /* Rounded corners for the container */
+  background: white; /* Add contrast against the peach background */
 }
 
 img, .gif {
@@ -23,11 +30,12 @@ img, .gif {
 }
 
 button {
-  padding: 10px 20px;
+  padding: 12px 25px;
   margin: 10px;
   border: none;
-  border-radius: 15px;
-  font-size: 16px;
+  border-radius: 20px;
+  font-size: 18px; /* Increased button font size */
+  font-weight: bold; /* Bold button text */
   cursor: pointer;
   color: white;
   background: linear-gradient(45deg, #ff758c, #ff7eb3);
@@ -35,8 +43,8 @@ button {
 }
 
 button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.1); /* Slightly larger on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
 .navigation {
@@ -47,6 +55,12 @@ button:hover {
 .navigation button {
   flex: 1;
   margin: 0 5px;
+}
+
+p {
+  font-size: 20px; /* Larger font size for text */
+  font-weight: 600; /* Semi-bold text */
+  line-height: 1.6; /* Add better readability */
 }
 
 .hidden {
