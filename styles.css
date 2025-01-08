@@ -16,8 +16,9 @@ body {
 }
 
 p {
-  font-size: 20px; /* Increase this value for larger text */
-  line-height: 1.5;
+  font-size: 24px; /* Larger text */
+  font-weight: bold; /* Make text bold */
+  line-height: 1.6;
   color: #333;
   margin-bottom: 20px;
 }
@@ -30,11 +31,12 @@ img, .gif {
 }
 
 button {
-  padding: 10px 20px;
+  padding: 15px 25px;
   margin: 10px;
   border: none;
   border-radius: 15px;
-  font-size: 18px; /* Adjust font size for buttons */
+  font-size: 20px; /* Bigger font size */
+  font-weight: bold; /* Bold text for buttons */
   cursor: pointer;
   color: white;
   background: linear-gradient(45deg, #ff758c, #ff7eb3);
@@ -42,7 +44,7 @@ button {
 }
 
 button:hover {
-  transform: scale(1.05);
+  transform: scale(1.1); /* Slightly bigger on hover */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
