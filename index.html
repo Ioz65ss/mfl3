@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Special Website for You</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script>
-        (function() {
-            emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your Public Key
-        })();
-    </script>
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surprise for You</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="content">
-        <!-- Dynamic Content will Load Here -->
+  <div id="app">
+    <!-- Main content -->
+    <div class="content">
+      <img id="gif" src="" alt="GIF">
+      <p id="text"></p>
+      <div id="buttons"></div>
     </div>
-
-    <!-- Navigation Buttons -->
-    <div class="nav-buttons">
-        <button id="prevBtn" onclick="navigate(-1)">Previous</button>
-        <button id="nextBtn" onclick="navigate(1)">Next</button>
+    
+    <!-- Navigation -->
+    <div class="navigation">
+      <button id="prev" class="nav-button">Previous</button>
+      <button id="next" class="nav-button">Next</button>
     </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
