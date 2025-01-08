@@ -1,91 +1,102 @@
+// JavaScript to handle dynamic content and navigation
+const app = document.getElementById("app");
+
+// Page content data
 const pages = [
-  { content: 'Hello 👋', gif: 'gif1.gif', next: true, prev: false },
-  { content: 'Kesi hai ap👉🏻👈🏻??? Sach sach batana😿', gif: 'gif2.gif', options: ['Thik hoon❤', 'ekdum bindass hoon❤'] },
-  { content: 'I know, ap ko thora dukh diya hai mene🤕', gif: 'gif3.gif', next: true, prev: true },
-  { 
-    content: 'Kya ap mujhe maaf karengi❤???', 
-    gif: 'gif4.gif', 
-    options: ['Yes', 'No'], 
-    isSpecialPage: true 
+  {
+    content: `<img class="gif" src="gif1.gif" alt="Hello"><p>Hello👋</p>`,
+    next: 1,
   },
-  { content: 'Thank you, apko ek reward milega worth 7 crore.', gif: 'gif5.gif', next: true, prev: true },
-  { content: 'Itni jaldi nhi, apko ko thora mehenat krna parega😇', gif: 'gif6.gif', next: true, prev: true },
-  { content: 'Next page mai sawal ka jawab dijiye aur le jaiye gift worth 7 Cr.', gif: 'gif7.gif', next: true, prev: true },
-  { content: 'Choose the most beautiful flower.', gif: 'gif8.gif', next: true, prev: true },
-  { content: 'Heheheheh😂, Galat jawab😗...', gif: 'gif9.gif', next: true, prev: true },
-  { content: 'Sahi jawab hai....', gif: 'gif10.gif', next: true, prev: true },
-  { content: 'Ji bilkul sahi samjhe, Ap he ho cutie🎀😚', gif: 'gif11.gif', next: true, prev: true },
-  { content: 'Kya ap gift ke liye taiyar hai???', gif: 'gif12.gif', showYes: true },
-  { content: 'Khair koi na, jaate jaate ek gift le jaiye.', gif: 'gif13.gif', next: true, prev: true },
-  { content: 'Ye lijiye mera dil❤, It is worth 7Cr. Just for you😊', gif: 'gif14.gif', next: true, prev: true },
-  { content: 'Galat jawab dene par bhi apko 7Cr ka reward mil gaya apko😞', gif: 'gif15.gif', next: true, prev: true },
-  { content: 'Areee, itni jaldi bhi kya hai???', gif: 'gif16.gif', next: true, prev: true },
-  { content: 'Aj apne bohot mehenat krke exam diya hai🥺💯', gif: 'gif17.gif', next: true, prev: true },
-  { content: 'Ye lijiye apke liye ek chocolate 😋🍫', gif: 'gif18.gif', next: true, prev: true },
-  { content: 'Ohhh, aur ek chiz', gif: 'gif19.gif', next: true, prev: true },
-  { content: 'Meri pyari si fool ke liye pyara sa phool🌺😊', gif: 'gif20.gif', next: true, prev: true },
-  { content: 'Ye lijiye', gif: 'gif21.gif', next: true, prev: true },
-  { content: 'Aur ye bhi', gif: 'gif22.gif', next: true, prev: true },
-  { content: 'I hope tumhe bore nhi laga hoga. Apna dhyan rakhiyega❤', gif: 'gif23.gif', next: false, prev: true },
+  {
+    content: `<img class="gif" src="gif2.gif" alt="Kesi hai ap"><p>Kesi hai ap👉🏻👈🏻??? Sach sach batana😿</p>
+              <button onclick="handleChoice(1)" class="choice">Thik hoon❤</button>
+              <button onclick="handleChoice(2)" class="choice">Ekdum bindass hoon❤</button>`,
+    prev: 0,
+    next: 2,
+  },
+  {
+    content: `<img class="gif" src="gif3.gif" alt="I know"><p>I know, ap ko thora dukh diya hai mene🤕</p>`,
+    prev: 1,
+    next: 3,
+  },
+  {
+    content: `<img class="gif" src="gif4.gif" alt="Kya ap mujhe maaf karengi"><p>Kya ap mujhe maaf karengi❤???</p>
+              <button onclick="handleYes()" class="choice">Yes</button>
+              <button onclick="handleNo()" id="no-btn" class="choice">No</button>`,
+    prev: 2,
+  },
+  { content: `<p>Thank you, apko ek reward milega worth 7 crore.</p>`, prev: 3, next: 5 },
+  { content: `<p>Itni jaldi nhi, apko ko thora mehenat krna parega😇</p>`, prev: 4, next: 6 },
+  { content: `<p>Next page mai sawal ka jawab dijiye aur le jaiye gift worth 7 Cr.</p>`, prev: 5, next: 7 },
+  { content: `<p>Choose the most beautiful flower</p><div class="flowers"><img src="flower1.jpg" class="choice"><img src="flower2.jpg" class="choice"></div>`, prev: 6, next: 8 },
+  { content: `<p>Heheheheh😂, Galat jawab😗...</p>`, prev: 7, next: 9 },
+  { content: `<p>Sahi jawab hai....</p>`, prev: 8, next: 10 },
+  {
+    content: `<p>Ji bilkul sahi samjhe, Ap he ho cutie🎀😚</p><img src="cutie.jpg"><p>Ap bilkul meri lagti ho❤🎀</p>`,
+    prev: 9,
+    next: 11,
+  },
+  {
+    content: `<p>Kya ap gift ke liye taiyar hai???</p><button onclick="goToPage(12)" class="choice">Yes</button>`,
+    prev: 10,
+  },
+  {
+    content: `<p>Khair koi na, jaate jaate ek gift le jaiye</p>`,
+    prev: 10,
+    next: 12,
+  },
+  { content: `<p>Ye lijiye mera dil❤, It is worth 7Cr. Just for you😊</p><div class="images"><img src="heart1.jpg"><img src="heart2.jpg"></div>`, prev: 11, next: 13 },
+  { content: `<p>Galat jawab dene par bhi apko 7Cr ka reward mil gaya apko😞</p>`, prev: 12, next: 14 },
+  { content: `<p>Areee, itni jaldi bhi kya hai???</p>`, prev: 13, next: 15 },
+  { content: `<p>Aj apne bohot mehenat krke exam diya hai🥺💯</p>`, prev: 14, next: 16 },
+  { content: `<p>Ye lijiye apke liye ek chocolate 😋🍫</p><img src="chocolate.jpg">`, prev: 15, next: 17 },
+  { content: `<p>Ohhh, aur ek chiz</p>`, prev: 16, next: 18 },
+  { content: `<p>Meri pyari si fool ke liye pyara sa phool🌺😊</p><img src="flower.jpg">`, prev: 17, next: 19 },
+  { content: `<p>Ye lijiye</p><img src="photo1.jpg">`, prev: 18, next: 20 },
+  { content: `<p>Aur ye bhi</p><img src="photo2.jpg">`, prev: 19, next: 21 },
+  { content: `<p>I hope tumhe bore nhi laga hoga. Apna dhyan rakhiyega❤</p>`, prev: 20 },
 ];
 
+// Variables to track page state
 let currentPage = 0;
-let wasForgiven = false;
 
-function renderPage(index) {
-  const app = document.getElementById('app');
+// Load page
+function loadPage() {
+  const page = pages[currentPage];
+  let navigation = "";
 
-  if (index < 0 || index >= pages.length) return;
+  if (page.prev !== undefined) {
+    navigation += `<button onclick="goToPage(${page.prev})" class="navigation">Previous</button>`;
+  }
 
-  const page = pages[index];
+  if (page.next !== undefined) {
+    navigation += `<button onclick="goToPage(${page.next})" class="navigation">Next</button>`;
+  }
+
   app.innerHTML = `
-    <div>
-      <img src="${page.gif}" alt="GIF" class="gif">
-      <p>${page.content}</p>
-      ${page.options ? renderOptions(page.options, page.isSpecialPage) : ''}
-      ${page.showYes ? '<button onclick="navigateToGift()">Yes</button>' : ''}
-      <div class="navigation">
-        ${page.prev ? `<button onclick="navigate(-1)">Previous</button>` : ''}
-        ${page.next ? `<button onclick="navigate(1)">Next</button>` : ''}
-      </div>
-    </div>
+    <div>${page.content}</div>
+    <div class="navigation">${navigation}</div>
   `;
 }
 
-function renderOptions(options, isSpecialPage = false) {
-  if (isSpecialPage) {
-    return `
-      <button id="yesButton" onclick="handleYes()">Yes</button>
-      <button id="noButton" onmouseover="moveNoButton()">No</button>
-    `;
-  }
-  return options.map((option, i) => `<button onclick="handleOption(${i})">${option}</button>`).join('');
+// Page navigation
+function goToPage(page) {
+  currentPage = page;
+  loadPage();
 }
 
-function navigate(direction) {
-  currentPage += direction;
-  renderPage(currentPage);
-}
-
+// Handle "Yes" action
 function handleYes() {
-  wasForgiven = true;
-  currentPage = 4; // Page index after "Yes"
-  renderPage(currentPage);
+  goToPage(4);
 }
 
-function navigateToGift() {
-  currentPage = wasForgiven ? 12 : 13; // Go to different page based on forgiveness
-  renderPage(currentPage);
+// Handle "No" action
+function handleNo() {
+  const noBtn = document.getElementById("no-btn");
+  noBtn.style.position = "absolute";
+  noBtn.style.top = `${Math.random() * 80}%`;
+  noBtn.style.left = `${Math.random() * 80}%`;
 }
 
-function moveNoButton() {
-  const noButton = document.getElementById('noButton');
-  noButton.style.position = 'absolute';
-  noButton.style.top = Math.random() * 80 + '%';
-  noButton.style.left = Math.random() * 80 + '%';
-}
-
-// Initialize the first page
-document.addEventListener('DOMContentLoaded', () => {
-  renderPage(currentPage);
-});
+// Start the application
+loadPage();
