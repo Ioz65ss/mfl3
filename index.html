@@ -3,24 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Surprise for You</title>
+  <title>Website for GF</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div id="app">
-    <!-- Main content -->
-    <div class="content">
-      <img id="gif" src="" alt="GIF">
-      <p id="text"></p>
-      <div id="buttons"></div>
-    </div>
-    
+    <!-- Content -->
+    <img id="gif" src="" alt="Page GIF" class="center">
+    <div id="text" class="text"></div>
+
+    <!-- Buttons -->
+    <div id="buttons" class="buttons hidden"></div>
+
     <!-- Navigation -->
-    <div class="navigation">
-      <button id="prev" class="nav-button">Previous</button>
-      <button id="next" class="nav-button">Next</button>
+    <div class="nav-buttons">
+      <button id="prev" class="nav-btn">Previous</button>
+      <button id="next" class="nav-btn">Next</button>
     </div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
