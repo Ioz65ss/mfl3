@@ -30,9 +30,22 @@ const pages = [
   {
     content: `
       <p>Thank you, apko ek reward milega worth 7 crore.</p>
+      <div class="navigation">
+        <button onclick="nextPage()">Next</button>
+      </div>
     `,
   },
-  // Additional pages remain unchanged
+  {
+    content: `
+      <p>Itni jaldi nhi, apko ko thora mehenat krna parega😇</p>
+    `,
+  },
+  {
+    content: `
+      <p>Next page mai sawal ka jawab dijiye aur le jaiye gift worth 7 Cr.</p>
+    `,
+  },
+  // Add remaining pages here
 ];
 
 let currentPage = 0;
@@ -40,23 +53,23 @@ let currentPage = 0;
 const app = document.getElementById("app");
 
 function renderPage() {
-  console.log("Rendering page:", currentPage); // Debugging
   const page = pages[currentPage];
   const hideNav = currentPage === 1 || currentPage === 3; // Hide navigation for pages 2 and 4
   app.innerHTML = `
     ${page.content}
-    <div class="navigation">
-      ${
-        !hideNav && currentPage > 0
-          ? `<button onclick="prevPage()">Previous</button>`
-          : ""
-      }
-      ${
-        !hideNav && currentPage < pages.length - 1
-          ? `<button onclick="nextPage()">Next</button>`
-          : ""
-      }
-    </div>
+    ${
+      !hideNav && currentPage > 0 && currentPage < pages.length - 1
+        ? `
+      <div class="navigation">
+        ${currentPage > 0 ? `<button onclick="prevPage()">Previous</button>` : ""}
+        ${
+          currentPage < pages.length - 1
+            ? `<button onclick="nextPage()">Next</button>`
+            : ""
+        }
+      </div>`
+        : ""
+    }
   `;
 }
 
