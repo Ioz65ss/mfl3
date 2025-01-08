@@ -1,104 +1,52 @@
-/* General Styles */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: #fff5f8;
-    text-align: center;
-    overflow: hidden;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #FFD1DC, #E1C4FF);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #333;
 }
 
-#content {
-    padding: 20px;
-    max-width: 500px;
-    margin: auto;
+#app {
+  text-align: center;
+  width: 80%;
+  max-width: 500px;
 }
 
-h1, p {
-    margin: 10px 0;
-    color: #444;
+img {
+  max-width: 100%;
+  border-radius: 10px;
 }
 
-img, iframe {
-    max-width: 80%;
-    height: auto;
-    margin: 10px 0;
-    border-radius: 10px;
+p {
+  font-size: 1.2em;
+  margin: 20px 0;
 }
 
-/* Navigation Buttons */
-.nav-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin: 20px auto;
-    width: 90%;
-    max-width: 500px;
+.nav-button, .action-button {
+  padding: 10px 20px;
+  font-size: 1em;
+  margin: 10px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: #FFB6C1;
+  color: white;
+  transition: background-color 0.3s;
 }
 
-button {
-    padding: 10px 20px;
-    font-size: 14px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    background-color: #ff66b2;
-    color: white;
+.nav-button:hover, .action-button:hover {
+  background-color: #FF69B4;
 }
 
-button:hover {
-    background-color: #e65c99;
+#buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
-/* Comment Box */
-textarea {
-    width: 80%;
-    height: 60px;
-    margin: 10px auto;
-    border-radius: 10px;
-    padding: 5px;
-    font-size: 14px;
-}
-
-/* Yes/No Buttons */
-.yes-no-buttons {
-    margin-top: 20px;
-}
-
-#yesBtn, #noBtn {
-    margin: 10px;
-}
-
-/* No Button Movement */
-#noBtn {
-    position: relative;
-}
-
-/* Flower Selection */
-.flower img {
-    width: 100px;
-    margin: 10px;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.flower img.selected {
-    border: 3px solid red;
-}
-
-/* Popup */
-.popup {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: white;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-}
-
-.popup button {
-    margin-top: 10px;
+.hidden {
+  display: none;
 }
