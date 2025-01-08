@@ -1,63 +1,23 @@
+
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
-  background-color: #fef4e4;
+  background: url('YOUR_IMAGE_URL_HERE') no-repeat center center fixed;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   overflow: hidden;
+  color: #ffffff; /* Adjust text color if needed */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Optional for better readability */
 }
 
 #app {
   text-align: center;
   width: 90%;
   max-width: 500px;
-}
-
-p {
-  font-size: 24px; /* Larger text */
-  font-weight: bold; /* Make text bold */
-  line-height: 1.6;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-img, .gif {
-  width: 100%;
-  height: auto;
-  margin-bottom: 20px;
-  border-radius: 10px;
-}
-
-button {
-  padding: 15px 25px;
-  margin: 10px;
-  border: none;
+  background: rgba(0, 0, 0, 0.5); /* Optional translucent background for content */
   border-radius: 15px;
-  font-size: 20px; /* Bigger font size */
-  font-weight: bold; /* Bold text for buttons */
-  cursor: pointer;
-  color: white;
-  background: linear-gradient(45deg, #ff758c, #ff7eb3);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-button:hover {
-  transform: scale(1.1); /* Slightly bigger on hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.navigation {
-  display: flex;
-  justify-content: space-between;
-}
-
-.navigation button {
-  flex: 1;
-  margin: 0 5px;
-}
-
-.hidden {
-  display: none;
+  padding: 20px;
 }
