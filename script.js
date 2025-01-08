@@ -165,7 +165,8 @@ function chooseResponse(response) {
 
 function handleForgive(choice) {
   if (choice === "yes") {
-    currentPage = 4;
+    currentPage = 4; // Set to the index of page 5 (0-based index)
+    renderPage();
   } else {
     const noButton = document.getElementById("noButton");
     noButton.style.position = "absolute";
