@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Special Website for You ❤</title>
+    <title>Special Website for You</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="content">
-        <!-- Dynamic content will be injected here via JavaScript -->
+
+    <!-- Page Container -->
+    <div id="app">
+        <!-- Content will dynamically load here -->
     </div>
-    
+
+    <!-- Navigation Buttons -->
     <div class="nav-buttons">
-        <button id="prev-btn" class="btn">Previous</button>
-        <button id="next-btn" class="btn">Next</button>
+        <button id="prevBtn" onclick="navigate(-1)">Previous</button>
+        <button id="nextBtn" onclick="navigate(1)">Next</button>
     </div>
 
     <script src="script.js"></script>
