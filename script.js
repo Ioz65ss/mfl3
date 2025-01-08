@@ -14,15 +14,16 @@ const pages = [
     text: "Kya ap mujhe maaf karengi❤???",
     gif: "forgive.gif",
     buttons: [
-      { text: "Yes❤", nextPage: 5 },
+      { text: "Yes❤", nextPage: 4 },
       { text: "No😿", type: "trick-no" }
     ]
   },
   { text: "Thank you, apko ek reward milega worth 7 crore.", gif: "reward.gif" },
   { text: "Itni jaldi nhi, apko ko thora mehenat krna parega😇", gif: "work.gif" },
   { text: "Next page mai sawal ka jawab dijiye aur le jaiye gift worth 7 Cr.", gif: "question.gif" },
-  { text: "Choose the most beautiful flower—", gif: "flowers.gif" },
-  // Add more pages following the same structure
+  { text: "Ye kya??? Apne mujhe abhi bhi maaf nhi kiya😭😭??", gif: "sad.gif" },
+  { text: "Ab apko punishment milega mere se!!😞", gif: "punish.gif" },
+  { text: "Apko mere saath KBC khelna parega😒", gif: "kbc.gif" }
 ];
 
 // Current Page Index
@@ -34,6 +35,7 @@ const textElement = document.getElementById("text");
 const buttonsElement = document.getElementById("buttons");
 const prevButton = document.getElementById("prev");
 const nextButton = document.getElementById("next");
+const navButtons = document.querySelector(".nav-buttons");
 
 // Load a Page
 function loadPage(index) {
@@ -47,6 +49,7 @@ function loadPage(index) {
   buttonsElement.innerHTML = "";
   if (page.buttons) {
     buttonsElement.classList.remove("hidden");
+    navButtons.classList.add("hidden");
     page.buttons.forEach(button => {
       const btn = document.createElement("button");
       btn.textContent = button.text;
@@ -61,6 +64,7 @@ function loadPage(index) {
     });
   } else {
     buttonsElement.classList.add("hidden");
+    navButtons.classList.remove("hidden");
   }
 
   // Handle Nav Buttons
@@ -78,7 +82,7 @@ function setupTrickNoButton(button) {
       button.style.top = `${Math.random() * 70 + 10}%`;
       button.style.left = `${Math.random() * 70 + 10}%`;
     } else {
-      button.onclick = () => loadPage(8);
+      button.onclick = () => loadPage(7);
     }
   });
 }
