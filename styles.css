@@ -2,22 +2,19 @@
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
-  background: #fde4e4; /* Light pink background */
-  background-image: url('your-background-image-url-here');
-  background-size: cover;
-  background-position: center;
+  background-color: #ffe6cc; /* Light peach background */
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
-.container {
+#container {
   text-align: center;
   width: 90%;
   max-width: 500px;
+  background: rgba(255, 255, 255, 0.9); /* Slight transparency */
   padding: 20px;
-  background: rgba(255, 255, 255, 0.8); /* Light transparency */
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
@@ -31,18 +28,18 @@ body {
 
 #text {
   font-size: 20px;
-  color: #ff5c5c; /* A vibrant pink shade */
+  color: #ff704d; /* Vibrant peach color */
+  margin-bottom: 20px;
 }
 
-/* Buttons */
 .buttons {
   display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
+  justify-content: center;
+  gap: 20px;
 }
 
 .btn {
-  background: #ff5c5c;
+  background: #ff704d;
   color: white;
   border: none;
   border-radius: 25px;
@@ -53,7 +50,7 @@ body {
 }
 
 .btn:hover {
-  background: #ff7878;
+  background: #ff8a66;
 }
 
 .btn:disabled {
