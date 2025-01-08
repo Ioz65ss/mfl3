@@ -136,12 +136,20 @@ const app = document.getElementById("app");
 function renderPage() {
   console.log("Rendering page:", currentPage); // Debugging
   const page = pages[currentPage];
+  const isForgivePage = currentPage === 3 || currentPage === 11; // Pages with Yes/No buttons
   app.innerHTML = `
     ${page.content}
     <div class="navigation">
-      ${currentPage > 0 ? `<button onclick="prevPage()">Previous</button>` : ""}
       ${
-        currentPage < pages.length - 1 && currentPage !== 3 && currentPage !== 11
+        !isForgivePage && currentPage > 0
+          ? `<button onclick="prevPage()">Previous</button>`
+          : ""
+      }
+      ${
+        !isForgivePage &&
+        currentPage < pages.length - 1 &&
+        currentPage !== 3 &&
+        currentPage !== 11
           ? `<button onclick="nextPage()">Next</button>`
           : ""
       }
