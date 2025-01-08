@@ -1,55 +1,56 @@
 body {
-    margin: 0;
-    overflow: hidden;
-    background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #fef9f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
 }
 
-.spiral-container {
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
 }
 
-.flower {
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    background: radial-gradient(circle, pink, purple);
-    border-radius: 50%;
-    animation: spiral 10s infinite ease-out;
-    transform-origin: center;
-    opacity: 0.8;
+.content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
-@keyframes spiral {
-    0% {
-        transform: rotate(0deg) translateY(0) scale(0.5);
-        opacity: 1;
-    }
-    100% {
-        transform: rotate(720deg) translateY(-600px) scale(1.5);
-        opacity: 0;
-    }
+#image-placeholder {
+  width: 200px;
+  height: 200px;
+  background-color: #ddd;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+  color: #555;
 }
 
-.diagonal-petal {
-    position: absolute;
-    width: 20px;
-    height: 60px;
-    background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
-    border-radius: 50%;
-    animation: diagonal-move 8s infinite ease-in-out;
-    opacity: 0.9;
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
 }
 
-@keyframes diagonal-move {
-    0% {
-        transform: translate(-50vw, -50vh) rotate(45deg);
-        opacity: 1;
-    }
-    100% {
-        transform: translate(50vw, 50vh) rotate(360deg);
-        opacity: 0;
-    }
+button {
+  background-color: #ff6f61;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff5040;
 }
