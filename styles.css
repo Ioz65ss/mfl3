@@ -1,56 +1,67 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  background-color: #fef9f9;
-  color: #333;
+  background-color: #ffe9e3;
   margin: 0;
   padding: 0;
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  width: 100%;
   height: 100vh;
-}
-
-.content {
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 20px;
-}
-
-#image-placeholder {
-  width: 200px;
-  height: 200px;
-  background-color: #ddd;
-  margin: 20px auto;
-  display: flex;
   justify-content: center;
+  position: relative;
+}
+
+.page {
+  display: none;
+  flex-direction: column;
   align-items: center;
-  font-size: 1.2em;
-  color: #555;
+  justify-content: center;
+  height: 100%;
 }
 
-.navigation {
+.page.active {
   display: flex;
-  justify-content: space-between;
-  padding: 20px;
 }
 
-button {
-  background-color: #ff6f61;
-  color: #fff;
+.hidden {
+  display: none;
+}
+
+.nav-button,
+.choice-button {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #ff8b94;
   border: none;
   border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 1rem;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #ff5040;
+.nav-button:hover,
+.choice-button:hover {
+  background-color: #ff5a5f;
+  color: white;
+}
+
+.flower-game {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.flower {
+  width: 150px;
+  margin: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.flower:hover {
+  transform: scale(1.1);
 }
