@@ -1,44 +1,49 @@
-// Page Content Array
+// Content Data
 const pages = [
-    { gif: 'assets/gif1.gif', text: 'Hello 👋' },
-    { gif: 'assets/gif2.gif', text: 'Kesi hai ap 👉🏻👈🏻??? Sach sach batana😿', commentBox: true },
-    { gif: 'assets/gif3.gif', text: 'I know, ap ko thora dukh diya hai mene🤕' },
-    { gif: 'assets/gif4.gif', text: 'Kya ap mujhe maaf karengi❤???', yesNo: true },
-    { gif: 'assets/gif5.gif', text: 'Choose the most beautiful flower', flowerQuiz: true },
+    { text: 'Hello 👋', gif: 'assets/gif1.gif' },
+    { text: 'Kesi hai ap 👉🏻👈🏻??? Sach sach batana😿', gif: 'assets/gif2.gif', commentBox: true },
+    { text: 'I know, ap ko thora dukh diya hai mene🤕', gif: 'assets/gif3.gif' },
+    { text: 'Kya ap mujhe maaf karengi❤???', gif: 'assets/gif4.gif', yesNo: true },
+    { text: 'Choose the most beautiful flower', gif: 'assets/gif5.gif', flowerQuiz: true },
     { text: 'Ji bilkul sahi samjhe, Ap he ho cutie🎀😚', img: 'assets/photo1.jpg' },
-    { text: 'Kya ap gift ke liye taiyar hai???', reward: true }
+    { text: 'Kya ap gift ke liye taiyar hai???', reward: true },
 ];
 
 let currentPage = 0;
 
 // Render Page
 function renderPage() {
-    const app = document.getElementById('app');
+    const content = document.getElementById('content');
     const page = pages[currentPage];
-    let content = `<h1>${page.text}</h1>`;
+    let html = `<h1>${page.text}</h1>`;
 
     if (page.gif) {
-        content += `<img src="${page.gif}" alt="GIF">`;
+        html += `<img src="${page.gif}" alt="GIF">`;
     }
     if (page.img) {
-        content += `<img src="${page.img}" alt="Image">`;
+        html += `<img src="${page.img}" alt="Image">`;
     }
     if (page.commentBox) {
-        content += `<textarea id="comment" placeholder="Type your answer here..."></textarea>
-                    <button onclick="sendComment()">Send</button>`;
+        html += `<textarea id="comment" placeholder="Type your answer..."></textarea>
+                 <button onclick="sendComment()">Send</button>`;
     }
     if (page.yesNo) {
-        content += `<button id="yesBtn" onclick="yesClicked()">Yes</button>
-                    <button id="noBtn" onclick="noClicked()">No</button>`;
+        html += `<div class="yes-no-buttons">
+                    <button id="yesBtn" onclick="yesClicked()">Yes</button>
+                    <button id="noBtn" onclick="noClicked()">No</button>
+                 </div>`;
     }
     if (page.flowerQuiz) {
-        content += `<div class="flowers">
-                        <img src="assets/photo1.jpg" onclick="flowerClicked(this)">
-                        <img src="assets/photo2.jpg" onclick="flowerClicked(this)">
-                    </div>`;
+        html += `<div class="flower">
+                    <img src="assets/photo1.jpg" onclick="flowerClicked(this)">
+                    <img src="assets/photo2.jpg" onclick="flowerClicked(this)">
+                 </div>`;
+    }
+    if (page.reward) {
+        html += `<p>Ye lijiye mera dil❤, It is worth 7Cr. Just for you😊</p>`;
     }
 
-    app.innerHTML = content;
+    content.innerHTML = html;
 }
 
 // Navigation
@@ -49,13 +54,13 @@ function navigate(step) {
     renderPage();
 }
 
-// Send Comment via EmailJS (Setup Required)
+// Send Comment
 function sendComment() {
     const comment = document.getElementById('comment').value;
-    alert(`Comment sent: ${comment}`);
+    alert(`Comment Sent: ${comment}`);
 }
 
-// Yes/No Button Behavior
+// Yes/No Button
 let noClickCount = 0;
 function noClicked() {
     noClickCount++;
@@ -69,15 +74,14 @@ function noClicked() {
 }
 
 function yesClicked() {
-    alert('Thank you! Moving to the reward page.');
+    alert('Thank you! Proceeding...');
     currentPage++;
     renderPage();
 }
 
 // Flower Selection
 function flowerClicked(img) {
-    img.style.border = '3px solid red';
-    img.style.borderRadius = '10px';
+    img.classList.add('selected');
     setTimeout(() => {
         alert('Galat jawab😑');
         if (confirm('Sahi answer bataye??')) {
