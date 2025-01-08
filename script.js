@@ -62,14 +62,20 @@ const pages = [
     `,
   },
   {
-    content: `
-      <p>Choose the most beautiful flower—</p>
-      <div class="navigation">
-        <button onclick="prevPage()">Previous</button>
-        <button onclick="nextPage()">Next</button>
-      </div>
-    `,
-  },
+  content: `
+    <p>Choose the most beautiful flower—</p>
+    <div id="flowers" class="flowers-container">
+      <img src="flower1.jpg" alt="Flower 1" class="flower" onclick="moveImage(this)">
+      <img src="flower2.jpg" alt="Flower 2" class="flower" onclick="moveImage(this)">
+      <img src="flower3.jpg" alt="Flower 3" class="flower" onclick="moveImage(this)">
+      <img src="flower4.jpg" alt="Flower 4" class="flower" onclick="moveImage(this)">
+    </div>
+    <div class="navigation">
+      <button onclick="prevPage()">Previous</button>
+      <button onclick="nextPage()">Next</button>
+    </div>
+  `,
+},
   {
     content: `
       <p>Heheheheh😂, Galat jawab😗...</p>
