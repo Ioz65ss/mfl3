@@ -1,56 +1,62 @@
-/* General styles */
+/* General Styles */
 body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  background-color: #f5f5f5;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #fffaf0;
 }
 
-.page {
-  display: none;
-  padding: 20px;
+#content {
+    margin-top: 50px;
+    padding: 20px;
 }
 
-.page.active {
-  display: block;
+/* Image and GIF Styling */
+img, .gif {
+    width: 60%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin: 20px 0;
 }
 
-.center {
-  display: block;
-  margin: 0 auto;
-  max-width: 300px;
+/* Text Styling */
+p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
 }
 
-.text {
-  font-size: 1.5rem;
-  margin: 20px 0;
+/* Buttons */
+.btn {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 10px;
 }
 
-button {
-  padding: 10px 20px;
-  border-radius: 10px;
-  border: none;
-  background-color: #ff6f61;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
+.btn:hover {
+    background-color: #e05c4f;
 }
 
-button:hover {
-  background-color: #ff4a3d;
-}
-
-textarea {
-  width: 80%;
-  height: 100px;
-  margin: 10px 0;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  padding: 10px;
-  font-size: 1rem;
-}
-
+/* Navigation Buttons */
 .nav-buttons {
-  margin-top: 20px;
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+/* Yes-No Buttons */
+.yes-no-buttons {
+    margin-top: 20px;
+}
+
+#no-btn {
+    position: relative;
 }
