@@ -3,30 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Special Website</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Website for GF</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="container">
-    <!-- Content Section -->
-    <div id="content">
-      <img id="gif" src="" alt="GIF">
-      <p id="text"></p>
-    </div>
-
-    <!-- Navigation Buttons -->
-    <div class="buttons" id="navigationButtons">
-      <button id="prevBtn" class="btn" onclick="prevPage()">Previous</button>
-      <button id="nextBtn" class="btn" onclick="nextPage()">Next</button>
-    </div>
-
-    <!-- Page 4 Buttons -->
-    <div class="buttons" id="yesNoButtons" style="display: none;">
-      <button id="yesBtn" class="btn" onclick="handleYes()">Yes</button>
-      <button id="noBtn" class="btn" onclick="handleNo()">No</button>
+  <!-- Page 1 -->
+  <div class="page" id="page-1">
+    <img src="images/hello.gif" alt="Hello" class="center">
+    <p class="text">Hello👋</p>
+    <div class="nav-buttons">
+      <button onclick="nextPage(2)">Next</button>
     </div>
   </div>
 
+  <!-- Page 2 -->
+  <div class="page" id="page-2" style="display: none;">
+    <img src="images/kesi-hai.gif" alt="Kesi Hai" class="center">
+    <p class="text">Kesi hai ap👉🏻👈🏻??? Sach sach batana😿</p>
+    <textarea id="comment-box" placeholder="Write your answer here..."></textarea>
+    <button onclick="submitResponse()">Submit</button>
+    <div class="nav-buttons">
+      <button onclick="prevPage(1)">Previous</button>
+      <button onclick="nextPage(3)">Next</button>
+    </div>
+  </div>
+
+  <!-- Add other pages similarly -->
+  
   <script src="script.js"></script>
 </body>
 </html>
