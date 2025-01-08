@@ -6,14 +6,22 @@ const pages = [
     { text: 'Kya ap mujhe maaf karengi❤???', gif: 'assets/gif4.gif', yesNo: true },
     { text: 'Choose the most beautiful flower', gif: 'assets/gif5.gif', flowerQuiz: true },
     { text: 'Ji bilkul sahi samjhe, Ap he ho cutie🎀😚', img: 'assets/photo1.jpg' },
-    { text: 'Kya ap gift ke liye taiyar hai???', reward: true },
+    { text: 'Kya ap gift ke liye taiyar hai???', reward: true }
 ];
 
 let currentPage = 0;
 
+// Ensure the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', renderPage);
+
 // Render Page
 function renderPage() {
     const content = document.getElementById('content');
+    if (!content) {
+        console.error("Error: #content element not found.");
+        return;
+    }
+
     const page = pages[currentPage];
     let html = `<h1>${page.text}</h1>`;
 
@@ -44,6 +52,10 @@ function renderPage() {
     }
 
     content.innerHTML = html;
+
+    // Show/Hide Navigation Buttons
+    document.getElementById('prevBtn').style.display = currentPage === 0 ? 'none' : 'inline-block';
+    document.getElementById('nextBtn').style.display = currentPage === pages.length - 1 ? 'none' : 'inline-block';
 }
 
 // Navigation
@@ -57,15 +69,20 @@ function navigate(step) {
 // Send Comment
 function sendComment() {
     const comment = document.getElementById('comment').value;
+    if (comment.trim() === '') {
+        alert('Please write a comment before sending!');
+        return;
+    }
     alert(`Comment Sent: ${comment}`);
 }
 
-// Yes/No Button
+// Yes/No Button Behavior
 let noClickCount = 0;
 function noClicked() {
     noClickCount++;
     const noBtn = document.getElementById('noBtn');
     if (noClickCount < 7) {
+        noBtn.style.position = 'absolute';
         noBtn.style.top = `${Math.random() * 300}px`;
         noBtn.style.left = `${Math.random() * 300}px`;
     } else {
@@ -90,6 +107,3 @@ function flowerClicked(img) {
         }
     }, 500);
 }
-
-// Initialize Page
-renderPage();
