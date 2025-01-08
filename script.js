@@ -1,88 +1,78 @@
-// Content for Each Page
-const pages = [
-    { type: 'gif-text', gif: 'assets/hello.gif', text: 'Hello 👋' },
-    { type: 'gif-text-input', gif: 'assets/kesi_hai.gif', text: 'Kesi hai ap👉🏻👈🏻??? Sach sach batana😿' },
-    { type: 'gif-text', gif: 'assets/sorry.gif', text: 'I know, ap ko thora dukh diya hai mene🤕' },
-    { type: 'yes-no', gif: 'assets/maaf.gif', text: 'Kya ap mujhe maaf karengi❤???' },
-    { type: 'gif-text', gif: 'assets/flower.gif', text: 'Choose the most beautiful flower—' },
-    { type: 'gif-text', gif: 'assets/correct.gif', text: 'Sahi jawab hai....' },
-    { type: 'gif-text', gif: 'assets/cutie.gif', text: 'Ji bilkul sahi samjhe, Ap he ho cutie🎀😚' },
-    { type: 'gif-text', gif: 'assets/gift.gif', text: 'Kya ap gift ke liye taiyar hai???' },
-    { type: 'gif-text', gif: 'assets/reward.gif', text: 'Galat jawab dene par bhi apko 7Cr ka reward mil gaya apko😞' },
-    { type: 'gif-text', gif: 'assets/chocolate.gif', text: 'Ye lijiye apke liye ek chocolate 😋🍫' },
-    { type: 'gif-text', gif: 'assets/flower2.gif', text: 'Meri pyari si fool ke liye pyara sa phool🌺😊' },
-    { type: 'gif-text', gif: 'assets/end.gif', text: 'I hope tumhe bore nhi laga hoga. Apna dhyan rakhiyega❤' }
-];
-
-let currentPage = 0;
-
-// Render Page
-function renderPage() {
-    const content = document.getElementById('content');
-    const page = pages[currentPage];
-
-    if (page.type === 'gif-text') {
-        content.innerHTML = `
-            <img src="${page.gif}" alt="GIF">
-            <p>${page.text}</p>
-        `;
-    } else if (page.type === 'gif-text-input') {
-        content.innerHTML = `
-            <img src="${page.gif}" alt="GIF">
-            <p>${page.text}</p>
-            <input type="text" id="user-input" placeholder="Your Answer">
-            <button class="btn" onclick="sendAnswer()">Submit</button>
-        `;
-    } else if (page.type === 'yes-no') {
-        content.innerHTML = `
-            <img src="${page.gif}" alt="GIF">
-            <p>${page.text}</p>
-            <div class="yes-no-buttons">
-                <button class="btn" onclick="handleYes()">Yes</button>
-                <button class="btn" id="no-btn" onclick="handleNo()">No</button>
-            </div>
-        `;
-    }
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffe6f2;
+    text-align: center;
+    overflow-x: hidden;
 }
 
-// Email Submission (Requires EmailJS)
-function sendAnswer() {
-    const userInput = document.getElementById('user-input').value;
-    console.log('User Answer:', userInput);
-    alert('Your answer has been sent!');
+#app {
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
 }
 
-// Yes-No Button Logic
-function handleYes() {
-    alert('Thank you! Moving ahead...');
-    nextPage();
+h1, p {
+    margin: 10px 0;
 }
 
-function handleNo() {
-    const noBtn = document.getElementById('no-btn');
-    noBtn.style.position = 'absolute';
-    noBtn.style.top = `${Math.random() * 300}px`;
-    noBtn.style.left = `${Math.random() * 300}px`;
+img, iframe {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
 
-// Navigation Logic
-function nextPage() {
-    if (currentPage < pages.length - 1) {
-        currentPage++;
-        renderPage();
-    }
+/* Navigation Buttons */
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
 }
 
-function prevPage() {
-    if (currentPage > 0) {
-        currentPage--;
-        renderPage();
-    }
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: #ff66b2;
+    color: white;
 }
 
-// Event Listeners
-document.getElementById('next-btn').addEventListener('click', nextPage);
-document.getElementById('prev-btn').addEventListener('click', prevPage);
+button:hover {
+    background-color: #e65c99;
+}
 
-// Initialize Page
-renderPage();
+/* Special Buttons */
+#yesBtn, #noBtn {
+    margin: 10px;
+}
+
+#noBtn {
+    position: relative;
+}
+
+/* Popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.popup button {
+    margin-top: 10px;
+}
