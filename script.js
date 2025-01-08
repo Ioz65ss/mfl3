@@ -6,8 +6,8 @@ const pages = [
     gif: "question.gif",
     buttons: [
       { text: "Thik hoon❤", nextPage: 2 },
-      { text: "Ekdum bindass hoon❤", nextPage: 2 }
-    ]
+      { text: "Ekdum bindass hoon❤", nextPage: 2 },
+    ],
   },
   { text: "I know, ap ko thora dukh diya hai mene🤕", gif: "sorry.gif" },
   {
@@ -15,19 +15,19 @@ const pages = [
     gif: "forgive.gif",
     buttons: [
       { text: "Yes❤", type: "yes" },
-      { text: "No😿", type: "trick-no" }
-    ]
+      { text: "No😿", type: "trick-no" },
+    ],
   },
-  // Pages for Yes block
+  // Yes Block Pages
   { text: "Thank you, apko ek reward milega worth 7 crore.", gif: "reward.gif", group: "yes" },
   { text: "Itni jaldi nhi, apko ko thora mehenat krna parega😇", gif: "work.gif", group: "yes" },
   { text: "Next page mai sawal ka jawab dijiye aur le jaiye gift worth 7 Cr.", gif: "question.gif", group: "yes" },
-  // Pages for No block
+  // No Block Pages
   { text: "Ye kya??? Apne mujhe abhi bhi maaf nhi kiya😭😭??", gif: "sad.gif", group: "no" },
   { text: "Ab apko punishment milega mere se!!😞", gif: "punish.gif", group: "no" },
   { text: "Apko mere saath KBC khelna parega😒", gif: "kbc.gif", group: "no" },
-  // Common page
-  { text: "Choose the most beautiful flower—", gif: "flower.gif" }
+  // Common Page
+  { text: "Choose the most beautiful flower—", gif: "flower.gif" },
 ];
 
 // Current Page Index
@@ -57,7 +57,7 @@ function loadPage(index) {
   if (page.buttons) {
     buttonsElement.classList.remove("hidden");
     navButtons.classList.add("hidden");
-    page.buttons.forEach(button => {
+    page.buttons.forEach((button) => {
       const btn = document.createElement("button");
       btn.textContent = button.text;
 
@@ -133,8 +133,10 @@ nextButton.onclick = () => {
 function navigateWithinGroup(index, group) {
   if (pages[index] && pages[index].group === group) {
     loadPage(index);
-  } else {
-    loadPage(pages.findIndex(page => !page.group)); // Navigate to first non-group page
+  } else if (group === "yes") {
+    loadPage(8); // Transition to Page 8
+  } else if (group === "no") {
+    loadPage(8); // Transition to Page 8
   }
 }
 
