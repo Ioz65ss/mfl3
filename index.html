@@ -3,40 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Special Website</title>
+  <title>Your Website</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="page1" class="page active">
-    <img src="gif1.gif" alt="Hello GIF" class="center">
-    <p>Hello👋</p>
-    <button class="nav-btn" onclick="nextPage(2)">Next</button>
+  <div id="app">
+    <!-- Dynamic content will be injected here -->
   </div>
-
-  <div id="page2" class="page">
-    <img src="gif2.gif" alt="Kesi hai GIF" class="center">
-    <p>Kesi hai ap👉🏻👈🏻??? Sach sach batana😿</p>
-    <button class="option-btn" onclick="nextPage(3)">Thik hoon❤</button>
-    <button class="option-btn" onclick="nextPage(3)">Ekdum bindass hoon❤</button>
-    <button class="nav-btn" onclick="prevPage(1)">Previous</button>
-  </div>
-
-  <div id="page3" class="page">
-    <img src="gif3.gif" alt="Sorry GIF" class="center">
-    <p>I know, ap ko thora dukh diya hai mene🤕</p>
-    <button class="nav-btn" onclick="nextPage(4)">Next</button>
-    <button class="nav-btn" onclick="prevPage(2)">Previous</button>
-  </div>
-
-  <!-- Page 4: Yes/No Buttons with Conditions -->
-  <div id="page4" class="page">
-    <img src="gif4.gif" alt="Forgiveness GIF" class="center">
-    <p>Kya ap mujhe maaf karengi❤???</p>
-    <button class="yes-btn" onclick="yesResponse()">Yes</button>
-    <button class="no-btn" id="noButton" onclick="noResponse()">No</button>
-  </div>
-
-  <!-- Additional pages (5-22) will follow this structure -->
   <script src="script.js"></script>
 </body>
 </html>
