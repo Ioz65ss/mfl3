@@ -1,67 +1,62 @@
+/* General Styles */
 body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  background-color: #ffe9e3;
   margin: 0;
-  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: #fde4e4; /* Light pink background */
+  background-image: url('your-background-image-url-here');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .container {
-  width: 100%;
-  height: 100vh;
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8); /* Light transparency */
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#gif {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 15px;
+}
+
+#text {
+  font-size: 20px;
+  color: #ff5c5c; /* A vibrant pink shade */
+}
+
+/* Buttons */
+.buttons {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+  justify-content: space-between;
+  margin-top: 20px;
 }
 
-.page {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-
-.page.active {
-  display: flex;
-}
-
-.hidden {
-  display: none;
-}
-
-.nav-button,
-.choice-button {
-  margin: 10px;
-  padding: 10px 20px;
-  background-color: #ff8b94;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.nav-button:hover,
-.choice-button:hover {
-  background-color: #ff5a5f;
+.btn {
+  background: #ff5c5c;
   color: white;
-}
-
-.flower-game {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 20px 0;
-}
-
-.flower {
-  width: 150px;
-  margin: 10px;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 16px;
   cursor: pointer;
-  transition: transform 0.3s;
+  transition: background-color 0.3s ease;
 }
 
-.flower:hover {
-  transform: scale(1.1);
+.btn:hover {
+  background: #ff7878;
+}
+
+.btn:disabled {
+  background: #f3a6a6;
+  cursor: not-allowed;
 }
