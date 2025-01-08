@@ -247,5 +247,51 @@ function handleForgive(choice) {
   }
 }
 
+function moveImage(image) {
+  const container = document.getElementById("flowers");
+  const containerRect = container.getBoundingClientRect();
+
+  const getRandomPosition = () => {
+    const maxX = containerRect.width - image.offsetWidth;
+    const maxY = containerRect.height - image.offsetHeight;
+    return {
+      x: Math.random() * maxX,
+      y: Math.random() * maxY,
+    };
+  };
+
+  const checkOverlap = (x, y) => {
+    const siblings = container.querySelectorAll(".flower");
+    for (const sibling of siblings) {
+      if (sibling !== image) {
+        const siblingRect = sibling.getBoundingClientRect();
+        const imageRect = {
+          left: x,
+          top: y,
+          right: x + image.offsetWidth,
+          bottom: y + image.offsetHeight,
+        };
+        if (
+          !(imageRect.right < siblingRect.left ||
+            imageRect.left > siblingRect.right ||
+            imageRect.bottom < siblingRect.top ||
+            imageRect.top > siblingRect.bottom)
+        ) {
+          return true; // Overlap detected
+        }
+      }
+    }
+    return false;
+  };
+
+  let position;
+  do {
+    position = getRandomPosition();
+  } while (checkOverlap(position.x, position.y));
+
+  image.style.left = `${position.x}px`;
+  image.style.top = `${position.y}px`;
+}
+
 // Initialize the first page
 renderPage();
