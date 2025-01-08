@@ -1,7 +1,7 @@
 const pages = [
   {
     content: `
-      <div class="gif">[GIF 1 Placeholder]</div>
+      <div class="gif"><img src="./images/my-image.jpg" alt="A beautiful image"></div>
       <p>Hello 👋</p>
       <div class="navigation">
         <button onclick="nextPage()">Next</button>
@@ -10,7 +10,7 @@ const pages = [
   },
   {
     content: `
-      <div class="gif">[GIF 2 Placeholder]</div>
+      <div class="gif"><img src="./images/my-image.jpg" alt="A beautiful image"></div>
       <p>Kesi hai ap👉🏻👈🏻??? Sach sach batana😿</p>
       <button onclick="chooseResponse('thik')">Thik hoon ❤</button>
       <button onclick="chooseResponse('bindass')">Ekdum bindass hoon ❤</button>
@@ -18,7 +18,7 @@ const pages = [
   },
   {
     content: `
-      <div class="gif">[GIF 3 Placeholder]</div>
+      <div class="gif"><img src="./images/my-image.jpg" alt="A beautiful image"></div>
       <p>I know, ap ko thora dukh diya hai mene🤕</p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
@@ -28,7 +28,7 @@ const pages = [
   },
   {
     content: `
-      <div class="gif">[GIF 4 Placeholder]</div>
+      <div class="gif"><img src="./images/my-image.jpg" alt="A beautiful image"></div>
       <p>Kya ap mujhe maaf karengi ❤???</p>
       <button onclick="handleForgive('yes')">Yes</button>
       <button id="noButton" onclick="handleForgive('no')">No</button>
@@ -96,7 +96,7 @@ const pages = [
   },
   {
     content: `
-      <div class="photo">[PHOTO Placeholder]</div>
+      <div class="photo"><img src="./images/my-image.jpg" alt="A beautiful image"></div>
       <p>Ji bilkul sahi samjhe, Ap he ho cutie🎀😚</p>
       <p>Ap bilkul meri lagti ho❤🎀</p>
       <div class="navigation">
@@ -114,7 +114,10 @@ const pages = [
   {
     content: `
       <p>Ye lijiye mera dil❤,It is worth 7Cr. Just for you😊</p>
-      <div class="photos">[Photos/GIFs Placeholder]</div>
+      <div class="photos"><img src="./images/my-image.jpg" alt="A beautiful image"
+class="photos"><img src="./images/my-image.jpg" alt="A beautiful image"
+class="photos"><img src="./images/my-image.jpg" alt="A beautiful image"
+class="photos"><img src="./images/my-image.jpg" alt="A beautiful image"></div>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
         <button onclick="nextPage()">Next</button>
@@ -150,7 +153,7 @@ const pages = [
   },
   {
     content: `
-      <div class="photo">[Chocolate Image Placeholder]</div>
+      <div class="photo"><img src="./images/my-image.jpg" alt="A beautiful image"</div>
       <p>Ye lijiye apke liye ek chocolate 😋🍫</p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
@@ -169,7 +172,7 @@ const pages = [
   },
   {
     content: `
-      <div class="photo">[Flower Image Placeholder]</div>
+      <div class="photo"><img src="./images/my-image.jpg" alt="A beautiful image"></div>
       <p>Meri pyari si fool ke liye pyara sa phool🌺😊</p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
@@ -179,7 +182,7 @@ const pages = [
   },
   {
     content: `
-      <div class="photo">[Photo Placeholder]</div>
+      <div class="photo"><img src="./images/my-image.jpg" alt="A beautiful image"></div>
       <p>Ye lijiye</p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
@@ -189,7 +192,7 @@ const pages = [
   },
   {
     content: `
-      <div class="photo">[Photo Placeholder]</div>
+      <div class="photo"><img src="./images/my-image.jpg" alt="A beautiful image"></div>
       <p>Aur ye bhi</p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
