@@ -1,70 +1,60 @@
-/* General Styling */
 body {
+  font-family: Arial, sans-serif;
+  background-color: #ffefe6;
+  color: #333;
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #ffe6f0;
-  color: #333;
-  text-align: center;
-}
-
-/* App Container */
-#app {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  padding: 20px;
-  box-sizing: border-box;
 }
 
-/* Centered GIF */
-.center {
-  max-width: 80%;
+#content {
+  text-align: center;
+  max-width: 600px;
+}
+
+.centered {
+  display: block;
+  margin: 20px auto;
+  max-width: 100%;
   height: auto;
-  margin: 20px 0;
-  border-radius: 10px;
 }
 
-/* Text Content */
-.text {
-  font-size: 1.5em;
-  margin: 20px 0;
-  color: #e75480;
+.centered-text {
+  font-size: 1.2em;
+  margin: 10px;
 }
 
-/* Buttons Container */
-.buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin: 20px 0;
+.button-container {
+  margin: 20px;
 }
 
-/* Button Styling */
 button {
+  background-color: #f08080;
+  border: none;
+  color: white;
   padding: 10px 20px;
   font-size: 1em;
-  background-color: #ff66b2;
-  color: white;
-  border: none;
-  border-radius: 20px;
+  margin: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  border-radius: 25px;
 }
 
 button:hover {
-  background-color: #e75480;
+  background-color: #e06666;
 }
 
-/* Navigation Buttons */
 .nav-buttons {
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  position: absolute;
-  bottom: 20px;
+  margin-top: 20px;
+}
+
+.nav-button {
+  padding: 10px 20px;
+  border-radius: 25px;
 }
 
 .hidden {
