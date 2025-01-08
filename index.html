@@ -1,47 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Website for GF</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Website for You ❤</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Page 1 -->
-  <div class="page" id="page-1">
-    <img src="images/hello.gif" alt="Hello" class="center">
-    <p class="text">Hello👋</p>
-    <div class="nav-buttons">
-      <button onclick="nextPage(2)">Next</button>
+    <div id="content">
+        <!-- Dynamic content will be injected here via JavaScript -->
     </div>
-  </div>
-
-  <!-- Page 2 -->
-  <div class="page" id="page-2" style="display: none;">
-    <img src="images/kesi-hai.gif" alt="Kesi Hai" class="center">
-    <p class="text">Kesi hai ap👉🏻👈🏻??? Sach sach batana😿</p>
-    <form id="responseForm" action="https://formspree.io/f/your-form-id" method="POST">
-      <textarea id="comment-box" name="response" placeholder="Write your answer here..." required></textarea>
-      <button type="submit">Submit</button>
-    </form>
+    
     <div class="nav-buttons">
-      <button onclick="prevPage(1)">Previous</button>
-      <button onclick="nextPage(3)">Next</button>
+        <button id="prev-btn" class="btn">Previous</button>
+        <button id="next-btn" class="btn">Next</button>
     </div>
-  </div>
 
-  <!-- Page 3 -->
-  <div class="page" id="page-3" style="display: none;">
-    <img src="images/sorry.gif" alt="Sorry" class="center">
-    <p class="text">I know, ap ko thora dukh diya hai mene🤕</p>
-    <div class="nav-buttons">
-      <button onclick="prevPage(2)">Previous</button>
-      <button onclick="nextPage(4)">Next</button>
-    </div>
-  </div>
-
-  <!-- Add more pages as needed -->
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
