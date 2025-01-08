@@ -3,6 +3,9 @@ const pages = [
     content: `
       <div class="gif">[GIF 1 Placeholder]</div>
       <p>Hello 👋</p>
+      <div class="navigation">
+        <button onclick="nextPage()">Next</button>
+      </div>
     `,
   },
   {
@@ -17,6 +20,10 @@ const pages = [
     content: `
       <div class="gif">[GIF 3 Placeholder]</div>
       <p>I know, ap ko thora dukh diya hai mene🤕</p>
+      <div class="navigation">
+        <button onclick="prevPage()">Previous</button>
+        <button onclick="nextPage()">Next</button>
+      </div>
     `,
   },
   {
@@ -31,6 +38,7 @@ const pages = [
     content: `
       <p>Thank you, apko ek reward milega worth 7 crore.</p>
       <div class="navigation">
+        <button onclick="prevPage()">Previous</button>
         <button onclick="nextPage()">Next</button>
       </div>
     `,
@@ -38,14 +46,159 @@ const pages = [
   {
     content: `
       <p>Itni jaldi nhi, apko ko thora mehenat krna parega😇</p>
+      <div class="navigation">
+        <button onclick="prevPage()">Previous</button>
+        <button onclick="nextPage()">Next</button>
+      </div>
     `,
   },
   {
     content: `
       <p>Next page mai sawal ka jawab dijiye aur le jaiye gift worth 7 Cr.</p>
+      <div class="navigation">
+        <button onclick="prevPage()">Previous</button>
+        <button onclick="nextPage()">Next</button>
+      </div>
     `,
   },
-  // Add remaining pages here
+  {
+    content: `
+      <p>Choose the most beautiful flower—</p>
+      <div class="navigation">
+        <button onclick="prevPage()">Previous</button>
+        <button onclick="nextPage()">Next</button>
+      </div>
+    `,
+  },
+  {
+    content: `
+      <p>Heheheheh😂, Galat jawab😗...</p>
+      <div class="navigation">
+        <button onclick="prevPage()">Previous</button>
+        <button onclick="nextPage()">Next</button>
+      </div>
+    `,
+  },
+  {
+    content: `
+      <p>Sahi jawab hai....</p>
+      <div class="navigation">
+        <button onclick="prevPage()">Previous</button>
+        <button onclick="nextPage()">Next</button>
+      </div>
+    `,
+  },
+  {
+    content: `
+      <div class="photo">[PHOTO Placeholder]</div>
+      <p>Ji bilkul sahi samjhe, Ap he ho cutie🎀😚</p>
+      <p>Ap bilkul meri lagti ho❤🎀</p>
+      <div class="navigation">
+        <button onclick="prevPage()">Previous</button>
+        <button onclick="nextPage()">Next</button>
+      </div>
+    `,
+  },
+  {
+    content: `
+      <p>Kya ap gift ke liye taiyar hai???</p>
+      <button onclick="nextPage()">Yes</button>
+    `,
+  },
+  {
+    content: `
+      <p>Ye lijiye mera dil❤,It is worth 7Cr. Just for you😊</p>
+      <div class="photos">[Photos/GIFs Placeholder]</div>
+      <div class="navigation">
+        <button onclick="prevPage()">Previous</button>
+        <button onclick="nextPage()">Next</button>
+      </div>
+    `,
+  },
+  {
+    content: `
+      <p>Galat jawab dene par bhi apko 7Cr ka reward mil gaya apko😞</p>
+      <div class="navigation">
+        <button onclick="prevPage()">Previous</button>
+        <button onclick="nextPage()">Next</button>
+      </div>
+    `,
+  },
+  {
+    content: `
+      <p>Areee, itni jaldi bhi kya hai???</p>
+      <div class="navigation">
+        <button onclick="prevPage()">Previous</button>
+        <button onclick="nextPage()">Next</button>
+      </div>
+    `,
+  },
+  {
+    content: `
+      <p>Aj apne bohot mehenat krke exam diya hai🥺💯</p>
+      <div class="navigation">
+        <button onclick="prevPage()">Previous</button>
+        <button onclick="nextPage()">Next</button>
+      </div>
+    `,
+  },
+  {
+    content: `
+      <div class="photo">[Chocolate Image Placeholder]</div>
+      <p>Ye lijiye apke liye ek chocolate 😋🍫</p>
+      <div class="navigation">
+        <button onclick="prevPage()">Previous</button>
+        <button onclick="nextPage()">Next</button>
+      </div>
+    `,
+  },
+  {
+    content: `
+      <p>Ohhh, aur ek chiz</p>
+      <div class="navigation">
+        <button onclick="prevPage()">Previous</button>
+        <button onclick="nextPage()">Next</button>
+      </div>
+    `,
+  },
+  {
+    content: `
+      <div class="photo">[Flower Image Placeholder]</div>
+      <p>Meri pyari si fool ke liye pyara sa phool🌺😊</p>
+      <div class="navigation">
+        <button onclick="prevPage()">Previous</button>
+        <button onclick="nextPage()">Next</button>
+      </div>
+    `,
+  },
+  {
+    content: `
+      <div class="photo">[Photo Placeholder]</div>
+      <p>Ye lijiye</p>
+      <div class="navigation">
+        <button onclick="prevPage()">Previous</button>
+        <button onclick="nextPage()">Next</button>
+      </div>
+    `,
+  },
+  {
+    content: `
+      <div class="photo">[Photo Placeholder]</div>
+      <p>Aur ye bhi</p>
+      <div class="navigation">
+        <button onclick="prevPage()">Previous</button>
+        <button onclick="nextPage()">Next</button>
+      </div>
+    `,
+  },
+  {
+    content: `
+      <p>I hope tumhe bore nhi laga hoga. Apna dhyan rakhiyega❤</p>
+      <div class="navigation">
+        <button onclick="prevPage()">Previous</button>
+      </div>
+    `,
+  },
 ];
 
 let currentPage = 0;
@@ -54,33 +207,21 @@ const app = document.getElementById("app");
 
 function renderPage() {
   const page = pages[currentPage];
-  const hideNav = currentPage === 1 || currentPage === 3; // Hide navigation for pages 2 and 4
-  app.innerHTML = `
-    ${page.content}
-    ${
-      !hideNav && currentPage > 0 && currentPage < pages.length - 1
-        ? `
-      <div class="navigation">
-        ${currentPage > 0 ? `<button onclick="prevPage()">Previous</button>` : ""}
-        ${
-          currentPage < pages.length - 1
-            ? `<button onclick="nextPage()">Next</button>`
-            : ""
-        }
-      </div>`
-        : ""
-    }
-  `;
+  app.innerHTML = page.content;
 }
 
 function nextPage() {
-  currentPage++;
-  renderPage();
+  if (currentPage < pages.length - 1) {
+    currentPage++;
+    renderPage();
+  }
 }
 
 function prevPage() {
-  currentPage--;
-  renderPage();
+  if (currentPage > 0) {
+    currentPage--;
+    renderPage();
+  }
 }
 
 function chooseResponse(response) {
@@ -90,8 +231,8 @@ function chooseResponse(response) {
 
 function handleForgive(choice) {
   if (choice === "yes") {
-    currentPage = 4; // Set to the index of page 5 (0-based index)
-    renderPage(); // Re-render the page
+    currentPage = 4; // Page 5 index
+    renderPage();
   } else {
     const noButton = document.getElementById("noButton");
     noButton.style.position = "absolute";
