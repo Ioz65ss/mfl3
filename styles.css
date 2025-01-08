@@ -1,23 +1,13 @@
-
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
-  background: url('YOUR_IMAGE_URL_HERE') no-repeat center center fixed;
+  background: url('./images/4a6b7dd79cdd4b83a9bc657ad09a8fac.jpg') no-repeat center center fixed;
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   overflow: hidden;
-  color: #ffffff; /* Adjust text color if needed */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Optional for better readability */
-}
-
-#app {
-  text-align: center;
-  width: 90%;
-  max-width: 500px;
-  background: rgba(0, 0, 0, 0.5); /* Optional translucent background for content */
-  border-radius: 15px;
-  padding: 20px;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
