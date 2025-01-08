@@ -5,24 +5,10 @@ const pages = [
   { 
     content: 'Kya ap mujhe maaf karengi❤???', 
     gif: 'gif4.gif', 
-    options: ['Yes', 'No'],
-    handleOption: (option) => {
-      if (option === 'Yes') {
-        // Navigate to the next page flow
-        currentPage = 4; // Set to the next page (Yes flow start)
-        renderPage(currentPage);
-      } else if (option === 'No') {
-        // Move the "No" button randomly
-        const noButton = document.querySelector('.no-btn');
-        if (noButton) {
-          noButton.style.position = 'absolute';
-          noButton.style.top = `${Math.random() * 300}px`;
-          noButton.style.left = `${Math.random() * 300}px`;
-        }
-      }
-    }
+    options: ['Yes', 'No'], 
+    isSpecialPage: true 
   },
-  // Add other pages here...
+  // Additional pages go here...
 ];
 
 let currentPage = 0;
@@ -41,7 +27,7 @@ function renderPage(index) {
     <div>
       <img src="${page.gif}" alt="GIF" class="gif">
       <p>${page.content}</p>
-      ${page.options ? renderOptions(page.options, page.handleOption) : ''}
+      ${page.options ? renderOptions(page.options, page.isSpecialPage) : ''}
       <div class="navigation">
         ${page.prev ? `<button onclick="navigate(-1)">Previous</button>` : ''}
         ${page.next ? `<button onclick="navigate(1)">Next</button>` : ''}
@@ -50,13 +36,14 @@ function renderPage(index) {
   `;
 }
 
-function renderOptions(options, handler) {
-  return options.map((option, i) => {
-    if (option === 'No') {
-      return `<button class="no-btn" onclick="handleOption(${i})">${option}</button>`;
-    }
-    return `<button onclick="handleOption(${i})">${option}</button>`;
-  }).join('');
+function renderOptions(options, isSpecialPage = false) {
+  if (isSpecialPage) {
+    return `
+      <button id="yesButton" onclick="handleYes()">Yes</button>
+      <button id="noButton" onmouseover="moveNoButton()">No</button>
+    `;
+  }
+  return options.map((option, i) => `<button onclick="handleOption(${i})">${option}</button>`).join('');
 }
 
 function navigate(direction) {
@@ -66,12 +53,26 @@ function navigate(direction) {
 
 function handleOption(optionIndex) {
   const page = pages[currentPage];
-  if (page.handleOption) {
-    const selectedOption = page.options[optionIndex];
-    page.handleOption(selectedOption);
+  const selectedOption = page.options[optionIndex];
+
+  if (selectedOption === 'No') {
+    alert('No button moved!');
   } else {
-    navigate(1); // Default behavior: move to the next page
+    navigate(1); // Move to the next page
   }
+}
+
+function handleYes() {
+  // Navigate to the next set of pages
+  currentPage = 4; // Adjust to the correct index of the next set of pages
+  renderPage(currentPage);
+}
+
+function moveNoButton() {
+  const noButton = document.getElementById('noButton');
+  noButton.style.position = 'absolute';
+  noButton.style.top = Math.random() * 80 + '%';
+  noButton.style.left = Math.random() * 80 + '%';
 }
 
 // Initialize the first page when DOM is fully loaded
