@@ -1,16 +1,54 @@
 body {
-margin: 0;
-font-family: 'Arial', sans-serif;
-background-color: #fef4e4;
-display: flex;
-justify-content: center;
-align-items: center;
-height: 100vh;
-overflow: hidden;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #fef4e4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
 }
+
 #app {
-text-align: center;
-width: 90%;
-max-width: 500px;
-border-radius: 15px;
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+}
+
+img, .gif {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 15px;
+  font-size: 16px;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(45deg, #ff758c, #ff7eb3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation button {
+  flex: 1;
+  margin: 0 5px;
+}
+
+.hidden {
+  display: none;
 }
