@@ -1,20 +1,44 @@
-const container = document.querySelector('.spiral-container');
+// Page content array
+const pages = [
+  "Hello 👉🏻👈🏻",
+  "Kesi hai ap??? Sach sach batana😿",
+  "I know, ap ko thora dukh diya hai mene🤕",
+  "Kya ap mujhe maaf karengi❤???",
+  "Choose the most beautiful flower—",
+  "Sahi jawab hai....",
+  "Photo",
+  "Kya ap gift ke liye taiyar hai???",
+  "Galat jawab dene par bhi apko 7Cr ka gift free mai mil gaya apko😞",
+  "Areee, itni jaldi bhi kya hai???",
+  "Aj apne bohot mehenat krke exam diya hai",
+  "Ye lijiye apke liye ek chocolate 😋🍫",
+  "Ohhh, aur ek chiz",
+  "Meri pyari si fool ke liye pyara sa phool🌺😊",
+  "I hope tumhe bore nhi laga hoga. Apna dhyan rakhiyega❤",
+];
 
-// Create thousands of flowers spiraling from the center
-for (let i = 0; i < 1000; i++) {
-    const flower = document.createElement('div');
-    flower.classList.add('flower');
-    flower.style.transform = `rotate(${i * 0.5}deg) translateY(${i * 0.5}px)`;
-    flower.style.animationDelay = `${i * 0.01}s`;
-    container.appendChild(flower);
+let currentPage = 0;
+
+// Functions to navigate pages
+function updateContent() {
+  document.getElementById("page-content").textContent = pages[currentPage];
+  document.getElementById("image-placeholder").textContent =
+    "Page " + (currentPage + 1);
 }
 
-// Create diagonal moving petals
-for (let i = 0; i < 100; i++) {
-    const petal = document.createElement('div');
-    petal.classList.add('diagonal-petal');
-    petal.style.left = `${Math.random() * 100}vw`;
-    petal.style.top = `${Math.random() * 100}vh`;
-    petal.style.animationDelay = `${Math.random() * 5}s`;
-    container.appendChild(petal);
+function nextPage() {
+  if (currentPage < pages.length - 1) {
+    currentPage++;
+    updateContent();
+  }
 }
+
+function prevPage() {
+  if (currentPage > 0) {
+    currentPage--;
+    updateContent();
+  }
+}
+
+// Initialize content
+updateContent();
