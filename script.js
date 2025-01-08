@@ -2,8 +2,27 @@ const pages = [
   { content: 'Hello 👋', gif: 'gif1.gif', next: true, prev: false },
   { content: 'Kesi hai ap👉🏻👈🏻??? Sach sach batana😿', gif: 'gif2.gif', options: ['Thik hoon❤', 'ekdum bindass hoon❤'] },
   { content: 'I know, ap ko thora dukh diya hai mene🤕', gif: 'gif3.gif', next: true, prev: true },
-  { content: 'Kya ap mujhe maaf karengi❤???', gif: 'gif4.gif', options: ['Yes', 'No'] },
-  // Add all pages here...
+  { 
+    content: 'Kya ap mujhe maaf karengi❤???', 
+    gif: 'gif4.gif', 
+    options: ['Yes', 'No'],
+    handleOption: (option) => {
+      if (option === 'Yes') {
+        // Navigate to the next page flow
+        currentPage = 4; // Set to the next page (Yes flow start)
+        renderPage(currentPage);
+      } else if (option === 'No') {
+        // Move the "No" button randomly
+        const noButton = document.querySelector('.no-btn');
+        if (noButton) {
+          noButton.style.position = 'absolute';
+          noButton.style.top = `${Math.random() * 300}px`;
+          noButton.style.left = `${Math.random() * 300}px`;
+        }
+      }
+    }
+  },
+  // Add other pages here...
 ];
 
 let currentPage = 0;
@@ -22,7 +41,7 @@ function renderPage(index) {
     <div>
       <img src="${page.gif}" alt="GIF" class="gif">
       <p>${page.content}</p>
-      ${page.options ? renderOptions(page.options) : ''}
+      ${page.options ? renderOptions(page.options, page.handleOption) : ''}
       <div class="navigation">
         ${page.prev ? `<button onclick="navigate(-1)">Previous</button>` : ''}
         ${page.next ? `<button onclick="navigate(1)">Next</button>` : ''}
@@ -31,8 +50,13 @@ function renderPage(index) {
   `;
 }
 
-function renderOptions(options) {
-  return options.map((option, i) => `<button onclick="handleOption(${i})">${option}</button>`).join('');
+function renderOptions(options, handler) {
+  return options.map((option, i) => {
+    if (option === 'No') {
+      return `<button class="no-btn" onclick="handleOption(${i})">${option}</button>`;
+    }
+    return `<button onclick="handleOption(${i})">${option}</button>`;
+  }).join('');
 }
 
 function navigate(direction) {
@@ -42,12 +66,11 @@ function navigate(direction) {
 
 function handleOption(optionIndex) {
   const page = pages[currentPage];
-  const selectedOption = page.options[optionIndex];
-
-  if (selectedOption === 'No') {
-    alert('No button moved!');
+  if (page.handleOption) {
+    const selectedOption = page.options[optionIndex];
+    page.handleOption(selectedOption);
   } else {
-    navigate(1); // Move to the next page
+    navigate(1); // Default behavior: move to the next page
   }
 }
 
