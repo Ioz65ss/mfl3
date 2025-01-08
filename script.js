@@ -9,10 +9,9 @@ const pages = [
   },
   {
     content: `<img class="gif" src="gif2.gif" alt="Kesi hai ap"><p>Kesi hai ap👉🏻👈🏻??? Sach sach batana😿</p>
-              <button onclick="handleChoice(1)" class="choice">Thik hoon❤</button>
-              <button onclick="handleChoice(2)" class="choice">Ekdum bindass hoon❤</button>`,
+              <button onclick="goToPage(2)" class="choice">Thik hoon❤</button>
+              <button onclick="goToPage(2)" class="choice">Ekdum bindass hoon❤</button>`,
     prev: 0,
-    next: 2,
   },
   {
     content: `<img class="gif" src="gif3.gif" alt="I know"><p>I know, ap ko thora dukh diya hai mene🤕</p>`,
@@ -83,13 +82,6 @@ function loadPage() {
 function goToPage(page) {
   currentPage = page;
   loadPage();
-}
-
-// Handle choice buttons on Page 2
-function handleChoice(choice) {
-  if (choice === 1 || choice === 2) {
-    goToPage(2); // Navigate to page 3 after a choice is made
-  }
 }
 
 // Handle "Yes" action
