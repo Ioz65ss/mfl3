@@ -61,29 +61,82 @@ const nextButton = document.getElementById("next");
 // Render page
 function renderPage(index) {
   const page = pages[index];
+
   gifElement.src = page.gif;
   textElement.textContent = page.text;
 
+  // Show extra text if available
+  if (page.extraText) {
+    const extra = document.createElement("p");
+    extra.className = "centered-text";
+    extra.textContent = page.extraText;
+    textElement.appendChild(extra);
+  }
+
+  // Show/hide buttons
   buttonsElement.innerHTML = "";
   if (page.buttons) {
     buttonsElement.classList.remove("hidden");
     page.buttons.forEach((btn) => {
       const button = document.createElement("button");
       button.textContent = btn.text;
-      button.onclick = btn.type === "trick-no" ? trickNoLogic : () => changePage(btn.nextPage);
+      button.onclick = btn.type === "trick-no" ? trickNoLogic : () => handleButtonClick(btn);
       buttonsElement.appendChild(button);
     });
   } else {
     buttonsElement.classList.add("hidden");
   }
 
+  // Show/hide navigation
   prevButton.style.display = index === 0 ? "none" : "inline-block";
   nextButton.style.display = index === pages.length - 1 ? "none" : "inline-block";
 }
 
-function changePage(nextPage) {
-  currentPage = nextPage;
+function handleButtonClick(button) {
+  if (button.type === "yes") {
+    forgivenessChoice = "yes";
+    currentPage = 4; // Start from Yes block
+  } else if (button.type === "no") {
+    forgivenessChoice = "no";
+    currentPage = 7; // Start from No block
+  } else if (button.nextPage !== undefined) {
+    currentPage = button.nextPage;
+  }
   renderPage(currentPage);
 }
 
+// Navigation logic
+nextButton.onclick = () => {
+  if (forgivenessChoice === "yes" && currentPage === 6) {
+    currentPage = 10; // Skip to the shared flow after Yes block
+  } else if (forgivenessChoice === "no" && currentPage === 9) {
+    currentPage = 10; // Skip to the shared flow after No block
+  } else {
+    currentPage++;
+  }
+  renderPage(currentPage);
+};
+
+prevButton.onclick = () => {
+  currentPage--;
+  renderPage(currentPage);
+};
+
+// Trick No Button Logic
+function trickNoLogic() {
+  let noButton = event.target;
+  let attempts = noButton.dataset.attempts || 0;
+  if (attempts < 6) {
+    noButton.dataset.attempts = ++attempts;
+    noButton.style.position = "absolute";
+    noButton.style.top = Math.random() * 80 + "%";
+    noButton.style.left = Math.random() * 80 + "%";
+  } else {
+    forgivenessChoice = "no";
+    currentPage = 7; // Start No block
+    renderPage(currentPage);
+  }
+}
+
+// Initialize
 renderPage(currentPage);
