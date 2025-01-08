@@ -134,6 +134,7 @@ let currentPage = 0;
 const app = document.getElementById("app");
 
 function renderPage() {
+  console.log("Rendering page:", currentPage); // Debugging
   const page = pages[currentPage];
   app.innerHTML = `
     ${page.content}
@@ -166,7 +167,7 @@ function chooseResponse(response) {
 function handleForgive(choice) {
   if (choice === "yes") {
     currentPage = 4; // Set to the index of page 5 (0-based index)
-    renderPage();
+    renderPage(); // Re-render the page
   } else {
     const noButton = document.getElementById("noButton");
     noButton.style.position = "absolute";
@@ -175,4 +176,5 @@ function handleForgive(choice) {
   }
 }
 
+// Initialize the first page
 renderPage();
