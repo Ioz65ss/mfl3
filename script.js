@@ -1,9 +1,6 @@
-// Page data
+// Pages Data
 const pages = [
-  {
-    text: "Hello👋",
-    gif: "hello.gif",
-  },
+  { text: "Hello👋", gif: "hello.gif" },
   {
     text: "Kesi hai ap👉🏻👈🏻??? Sach sach batana😿",
     gif: "question.gif",
@@ -12,10 +9,7 @@ const pages = [
       { text: "Ekdum bindass hoon❤", nextPage: 2 }
     ]
   },
-  {
-    text: "I know, ap ko thora dukh diya hai mene🤕",
-    gif: "sad.gif",
-  },
+  { text: "I know, ap ko thora dukh diya hai mene🤕", gif: "sorry.gif" },
   {
     text: "Kya ap mujhe maaf karengi❤???",
     gif: "forgive.gif",
@@ -24,62 +18,59 @@ const pages = [
       { text: "No😿", type: "trick-no" }
     ]
   },
-  {
-    text: "Thank you, apko ek reward milega worth 7 crore.",
-    gif: "reward.gif",
-  },
-  // Add other pages here...
+  { text: "Thank you, apko ek reward milega worth 7 crore.", gif: "reward.gif" },
+  { text: "Itni jaldi nhi, apko ko thora mehenat krna parega😇", gif: "work.gif" },
+  { text: "Next page mai sawal ka jawab dijiye aur le jaiye gift worth 7 Cr.", gif: "question.gif" },
+  { text: "Choose the most beautiful flower—", gif: "flowers.gif" },
+  // Add more pages following the same structure
 ];
 
+// Current Page Index
 let currentPage = 0;
 
-// DOM elements
+// DOM Elements
 const gifElement = document.getElementById("gif");
 const textElement = document.getElementById("text");
 const buttonsElement = document.getElementById("buttons");
 const prevButton = document.getElementById("prev");
 const nextButton = document.getElementById("next");
 
-// Function to load a page
-function loadPage(pageIndex) {
-  const page = pages[pageIndex];
-  currentPage = pageIndex;
+// Load a Page
+function loadPage(index) {
+  const page = pages[index];
+  currentPage = index;
 
-  // Update GIF and text
   gifElement.src = page.gif;
-  textElement.innerText = page.text;
+  textElement.textContent = page.text;
 
-  // Update buttons
-  buttonsElement.innerHTML = ""; // Clear old buttons
+  // Handle Buttons
+  buttonsElement.innerHTML = "";
   if (page.buttons) {
+    buttonsElement.classList.remove("hidden");
     page.buttons.forEach(button => {
       const btn = document.createElement("button");
-      btn.innerText = button.text;
-      btn.className = "action-button";
+      btn.textContent = button.text;
 
       if (button.type === "trick-no") {
-        btn.classList.add("no-button");
         setupTrickNoButton(btn);
       } else {
-        btn.addEventListener("click", () => loadPage(button.nextPage));
+        btn.onclick = () => loadPage(button.nextPage);
       }
 
       buttonsElement.appendChild(btn);
     });
-    buttonsElement.classList.remove("hidden");
   } else {
     buttonsElement.classList.add("hidden");
   }
 
-  // Handle navigation buttons visibility
-  prevButton.style.display = pageIndex === 0 ? "none" : "inline-block";
-  nextButton.style.display = pageIndex === pages.length - 1 ? "none" : "inline-block";
+  // Handle Nav Buttons
+  prevButton.style.display = index === 0 ? "none" : "inline-block";
+  nextButton.style.display = index === pages.length - 1 ? "none" : "inline-block";
 }
 
-// Function to set up a "trick no" button
+// Trick No Button Logic
 function setupTrickNoButton(button) {
   let moveCount = 0;
-
   button.addEventListener("mouseover", () => {
     if (moveCount < 7) {
       moveCount++;
@@ -87,23 +78,14 @@ function setupTrickNoButton(button) {
       button.style.top = `${Math.random() * 70 + 10}%`;
       button.style.left = `${Math.random() * 70 + 10}%`;
     } else {
-      button.onclick = () => loadPage(8); // Allow clicking after 7 moves
+      button.onclick = () => loadPage(8);
     }
   });
 }
 
-// Navigation buttons
-prevButton.addEventListener("click", () => {
-  if (currentPage > 0) {
-    loadPage(currentPage - 1);
-  }
-});
+// Navigation Buttons
+prevButton.onclick = () => loadPage(currentPage - 1);
+nextButton.onclick = () => loadPage(currentPage + 1);
 
-nextButton.addEventListener("click", () => {
-  if (currentPage < pages.length - 1) {
-    loadPage(currentPage + 1);
-  }
-});
-
-// Initialize the first page
-loadPage(currentPage);
+// Initialize
+loadPage(0);
