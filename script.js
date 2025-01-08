@@ -8,7 +8,10 @@ const pages = [
     options: ['Yes', 'No'], 
     isSpecialPage: true 
   },
-  // Additional pages go here...
+  { content: 'Thank you, apko ek reward milega worth 7 crore.', gif: 'gif5.gif', next: true, prev: true },
+  { content: 'Itni jaldi nhi, apko ko thora mehenat krna parega😇', gif: 'gif6.gif', next: true, prev: true },
+  { content: 'Next page mai sawal ka jawab dijiye aur le jaiye gift worth 7 Cr.', gif: 'gif7.gif', next: true, prev: true },
+  // Add remaining pages here...
 ];
 
 let currentPage = 0;
@@ -51,20 +54,8 @@ function navigate(direction) {
   renderPage(currentPage);
 }
 
-function handleOption(optionIndex) {
-  const page = pages[currentPage];
-  const selectedOption = page.options[optionIndex];
-
-  if (selectedOption === 'No') {
-    alert('No button moved!');
-  } else {
-    navigate(1); // Move to the next page
-  }
-}
-
 function handleYes() {
-  // Navigate to the next set of pages
-  currentPage = 4; // Adjust to the correct index of the next set of pages
+  currentPage = 4; // Set to the index of Page 5
   renderPage(currentPage);
 }
 
