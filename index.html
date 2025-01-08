@@ -3,21 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Website for My GF</title>
+  <title>Special Website</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
-    <div class="content">
-      <h1 id="page-content">Hello 👉🏻👈🏻</h1>
-      <div id="image-placeholder"></div>
+    <!-- Page 1 -->
+    <div id="page-1" class="page">
+      <h1>Hello 👉🏻👈🏻</h1>
+      <button class="nav-button" onclick="nextPage()">Next</button>
     </div>
-    <div class="navigation">
-      <button id="prev-btn" onclick="prevPage()">Previous</button>
-      <button id="next-btn" onclick="nextPage()">Next</button>
-    </div>
-  </div>
 
+    <!-- Page 2 -->
+    <div id="page-2" class="page hidden">
+      <h1>Kesi hai ap??? Sach sach batana😿</h1>
+      <button class="nav-button" onclick="prevPage()">Previous</button>
+      <button class="nav-button" onclick="nextPage()">Next</button>
+    </div>
+
+    <!-- Page 3 -->
+    <div id="page-3" class="page hidden">
+      <h1>I know, apko thora dukh diya hai mene 🤕</h1>
+      <button class="nav-button" onclick="prevPage()">Previous</button>
+      <button class="nav-button" onclick="nextPage()">Next</button>
+    </div>
+
+    <!-- Page 4 -->
+    <div id="page-4" class="page hidden">
+      <h1>Kya ap mujhe maaf karengi ❤?</h1>
+      <button class="choice-button" onclick="chooseYes()">Yes</button>
+      <button class="choice-button" onclick="chooseNo()">No</button>
+    </div>
+
+    <!-- Page 4.1 (Yes Path) -->
+    <div id="page-4-yes" class="page hidden">
+      <h1>Thank you! Apko ek reward milega worth 7 crore!</h1>
+      <button class="nav-button" onclick="nextPage()">Next</button>
+    </div>
+
+    <!-- Page 4.2 (No Path) -->
+    <div id="page-4-no" class="page hidden">
+      <h1>Ye kya??? Apne mujhe abhi bhi maaf nhi kiya😭😭?</h1>
+      <button class="nav-button" onclick="nextPage()">Next</button>
+    </div>
+
+    <!-- Page 5 (Flower Game) -->
+    <div id="page-5" class="page hidden">
+      <h1>Choose the most beautiful flower:</h1>
+      <div class="flower-game">
+        <img src="file-8G4cJt3n4EQ2PbpKWWU7Bi" class="flower" onclick="wrongAnswer()">
+        <img src="file-LGU7KLjXXZSqNKjYeBy9eo" class="flower" onclick="wrongAnswer()">
+        <img src="file-Eacbh7mBUFGdGhBuUqkZ8Z" class="flower" onclick="wrongAnswer()">
+        <img src="file-1KGwXtfoRLjkg5MzgWXC7u" class="flower" onclick="wrongAnswer()">
+      </div>
+      <h2 id="result" class="hidden">Galat jawab 😑</h2>
+      <button class="nav-button" onclick="nextPage()">Next</button>
+    </div>
+
+    <!-- Page 6 -->
+    <div id="page-6" class="page hidden">
+      <h1>Sahi jawab hai...</h1>
+      <button class="nav-button" onclick="nextPage()">Next</button>
+    </div>
+
+    <!-- Add remaining pages as needed -->
+
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
