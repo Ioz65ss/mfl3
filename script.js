@@ -14,20 +14,27 @@ const pages = [
     text: "Kya ap mujhe maaf karengi❤???",
     gif: "forgive.gif",
     buttons: [
-      { text: "Yes❤", nextPage: 4 },
+      { text: "Yes❤", type: "yes" },
       { text: "No😿", type: "trick-no" }
     ]
   },
-  { text: "Thank you, apko ek reward milega worth 7 crore.", gif: "reward.gif" },
-  { text: "Itni jaldi nhi, apko ko thora mehenat krna parega😇", gif: "work.gif" },
-  { text: "Next page mai sawal ka jawab dijiye aur le jaiye gift worth 7 Cr.", gif: "question.gif" },
-  { text: "Ye kya??? Apne mujhe abhi bhi maaf nhi kiya😭😭??", gif: "sad.gif" },
-  { text: "Ab apko punishment milega mere se!!😞", gif: "punish.gif" },
-  { text: "Apko mere saath KBC khelna parega😒", gif: "kbc.gif" }
+  // Pages for Yes block
+  { text: "Thank you, apko ek reward milega worth 7 crore.", gif: "reward.gif", group: "yes" },
+  { text: "Itni jaldi nhi, apko ko thora mehenat krna parega😇", gif: "work.gif", group: "yes" },
+  { text: "Next page mai sawal ka jawab dijiye aur le jaiye gift worth 7 Cr.", gif: "question.gif", group: "yes" },
+  // Pages for No block
+  { text: "Ye kya??? Apne mujhe abhi bhi maaf nhi kiya😭😭??", gif: "sad.gif", group: "no" },
+  { text: "Ab apko punishment milega mere se!!😞", gif: "punish.gif", group: "no" },
+  { text: "Apko mere saath KBC khelna parega😒", gif: "kbc.gif", group: "no" },
+  // Common page
+  { text: "Choose the most beautiful flower—", gif: "flower.gif" }
 ];
 
 // Current Page Index
 let currentPage = 0;
+
+// Track if Yes or No was clicked
+let forgivenessChoice = "";
 
 // DOM Elements
 const gifElement = document.getElementById("gif");
@@ -54,7 +61,12 @@ function loadPage(index) {
       const btn = document.createElement("button");
       btn.textContent = button.text;
 
-      if (button.type === "trick-no") {
+      if (button.type === "yes") {
+        btn.onclick = () => {
+          forgivenessChoice = "yes";
+          loadPage(4); // First page in the "Yes" group
+        };
+      } else if (button.type === "trick-no") {
         setupTrickNoButton(btn);
       } else {
         btn.onclick = () => loadPage(button.nextPage);
@@ -67,9 +79,17 @@ function loadPage(index) {
     navButtons.classList.remove("hidden");
   }
 
-  // Handle Nav Buttons
+  // Show/Hide Nav Buttons based on context
   prevButton.style.display = index === 0 ? "none" : "inline-block";
-  nextButton.style.display = index === pages.length - 1 ? "none" : "inline-block";
+  nextButton.style.display =
+    (index === pages.length - 1 || (page.group && !isLastInGroup(index))) ? "none" : "inline-block";
+}
+
+// Determine if it's the last page in a group
+function isLastInGroup(index) {
+  const page = pages[index];
+  const nextPage = pages[index + 1];
+  return page.group && (!nextPage || nextPage.group !== page.group);
 }
 
 // Trick No Button Logic
@@ -82,14 +102,41 @@ function setupTrickNoButton(button) {
       button.style.top = `${Math.random() * 70 + 10}%`;
       button.style.left = `${Math.random() * 70 + 10}%`;
     } else {
-      button.onclick = () => loadPage(7);
+      button.onclick = () => {
+        forgivenessChoice = "no";
+        loadPage(7); // First page in the "No" group
+      };
     }
   });
 }
 
 // Navigation Buttons
-prevButton.onclick = () => loadPage(currentPage - 1);
-nextButton.onclick = () => loadPage(currentPage + 1);
+prevButton.onclick = () => {
+  const currentPageData = pages[currentPage];
+  if (currentPageData.group && forgivenessChoice === currentPageData.group) {
+    navigateWithinGroup(currentPage - 1, forgivenessChoice);
+  } else {
+    loadPage(currentPage - 1);
+  }
+};
+
+nextButton.onclick = () => {
+  const currentPageData = pages[currentPage];
+  if (currentPageData.group && forgivenessChoice === currentPageData.group) {
+    navigateWithinGroup(currentPage + 1, forgivenessChoice);
+  } else {
+    loadPage(currentPage + 1);
+  }
+};
+
+// Navigate within a group
+function navigateWithinGroup(index, group) {
+  if (pages[index] && pages[index].group === group) {
+    loadPage(index);
+  } else {
+    loadPage(pages.findIndex(page => !page.group)); // Navigate to first non-group page
+  }
+}
 
 // Initialize
 loadPage(0);
