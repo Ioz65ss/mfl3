@@ -20,16 +20,28 @@
   <div class="page" id="page-2" style="display: none;">
     <img src="images/kesi-hai.gif" alt="Kesi Hai" class="center">
     <p class="text">Kesi hai ap👉🏻👈🏻??? Sach sach batana😿</p>
-    <textarea id="comment-box" placeholder="Write your answer here..."></textarea>
-    <button onclick="submitResponse()">Submit</button>
+    <form id="responseForm" action="https://formspree.io/f/your-form-id" method="POST">
+      <textarea id="comment-box" name="response" placeholder="Write your answer here..." required></textarea>
+      <button type="submit">Submit</button>
+    </form>
     <div class="nav-buttons">
       <button onclick="prevPage(1)">Previous</button>
       <button onclick="nextPage(3)">Next</button>
     </div>
   </div>
 
-  <!-- Add other pages similarly -->
-  
+  <!-- Page 3 -->
+  <div class="page" id="page-3" style="display: none;">
+    <img src="images/sorry.gif" alt="Sorry" class="center">
+    <p class="text">I know, ap ko thora dukh diya hai mene🤕</p>
+    <div class="nav-buttons">
+      <button onclick="prevPage(2)">Previous</button>
+      <button onclick="nextPage(4)">Next</button>
+    </div>
+  </div>
+
+  <!-- Add more pages as needed -->
+
   <script src="script.js"></script>
 </body>
 </html>
