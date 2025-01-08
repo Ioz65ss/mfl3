@@ -32,8 +32,10 @@ function renderPage() {
         html += `<img src="${page.img}" alt="Image">`;
     }
     if (page.commentBox) {
-        html += `<textarea id="comment" placeholder="Type your answer..."></textarea>
-                 <button onclick="sendComment()">Send</button>`;
+        html += `
+            <textarea id="comment" placeholder="Type your answer..." required></textarea>
+            <button onclick="sendComment()">Send</button>
+        `;
     }
     if (page.yesNo) {
         html += `<div class="yes-no-buttons">
@@ -53,7 +55,6 @@ function renderPage() {
 
     content.innerHTML = html;
 
-    // Show/Hide Navigation Buttons
     document.getElementById('prevBtn').style.display = currentPage === 0 ? 'none' : 'inline-block';
     document.getElementById('nextBtn').style.display = currentPage === pages.length - 1 ? 'none' : 'inline-block';
 }
@@ -66,44 +67,34 @@ function navigate(step) {
     renderPage();
 }
 
-// Send Comment
+// EmailJS Integration
 function sendComment() {
     const comment = document.getElementById('comment').value;
     if (comment.trim() === '') {
         alert('Please write a comment before sending!');
         return;
     }
-    alert(`Comment Sent: ${comment}`);
+
+    emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+        comment: comment,
+    })
+    .then(function(response) {
+        alert('Comment sent successfully!');
+    }, function(error) {
+        alert('Failed to send comment. Please try again later.');
+    });
 }
 
-// Yes/No Button Behavior
-let noClickCount = 0;
+// Yes/No Buttons
 function noClicked() {
-    noClickCount++;
     const noBtn = document.getElementById('noBtn');
-    if (noClickCount < 7) {
-        noBtn.style.position = 'absolute';
-        noBtn.style.top = `${Math.random() * 300}px`;
-        noBtn.style.left = `${Math.random() * 300}px`;
-    } else {
-        alert('Okay, you can click No now!');
-    }
+    noBtn.style.position = 'absolute';
+    noBtn.style.top = `${Math.random() * 300}px`;
+    noBtn.style.left = `${Math.random() * 300}px`;
 }
 
 function yesClicked() {
     alert('Thank you! Proceeding...');
     currentPage++;
     renderPage();
-}
-
-// Flower Selection
-function flowerClicked(img) {
-    img.classList.add('selected');
-    setTimeout(() => {
-        alert('Galat jawab😑');
-        if (confirm('Sahi answer bataye??')) {
-            currentPage++;
-            renderPage();
-        }
-    }, 500);
 }
