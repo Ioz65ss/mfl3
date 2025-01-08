@@ -1,86 +1,75 @@
-// Pages Data
-const pages = [
-  { gif: "your-gif-url-1", text: "Hello👋" },
-  { gif: "your-gif-url-2", text: "Kesi hai ap👉🏻👈🏻??? Sach sach batana😿" },
-  { gif: "your-gif-url-3", text: "I know, ap ko thora dukh diya hai mene🤕" },
-  {
-    gif: "your-gif-url-4",
-    text: "Kya ap mujhe maaf karengi❤???",
-    special: true // Indicates Page 4 with Yes/No buttons
-  },
-  { gif: "your-gif-url-5", text: "Thank you, apko ek reward milega worth 7 crore." }
-];
+// Variable to track the current page
+let currentPage = 1;
 
-let currentPage = 0;
-let noClickCount = 0; // Counter for the No button on Page 4
+// Function to navigate to the next page
+function nextPage(pageNumber) {
+  document.getElementById(`page-${currentPage}`).style.display = 'none';
+  document.getElementById(`page-${pageNumber}`).style.display = 'block';
+  currentPage = pageNumber;
+}
 
-// Load Page Content
-function loadPage(index) {
-  const gifElement = document.getElementById("gif");
-  const textElement = document.getElementById("text");
-  const navigationButtons = document.getElementById("navigationButtons");
-  const yesNoButtons = document.getElementById("yesNoButtons");
+// Function to navigate to the previous page
+function prevPage(pageNumber) {
+  document.getElementById(`page-${currentPage}`).style.display = 'none';
+  document.getElementById(`page-${pageNumber}`).style.display = 'block';
+  currentPage = pageNumber;
+}
 
-  const page = pages[index];
-
-  gifElement.src = page.gif;
-  textElement.textContent = page.text;
-
-  // Toggle navigation or Yes/No buttons
-  if (page.special) {
-    navigationButtons.style.display = "none";
-    yesNoButtons.style.display = "flex";
+// Function to handle the submission of the user's response
+function submitResponse() {
+  const response = document.getElementById('comment-box').value;
+  if (response) {
+    alert('Response submitted: ' + response);
+    // Optional: Send the response to email
+    sendResponseToEmail(response);
   } else {
-    navigationButtons.style.display = "flex";
-    yesNoButtons.style.display = "none";
-  }
-
-  // Disable Previous/Next buttons if needed
-  document.getElementById("prevBtn").disabled = index === 0;
-  document.getElementById("nextBtn").disabled = index === pages.length - 1;
-}
-
-// Navigate to the Previous Page
-function prevPage() {
-  if (currentPage > 0) {
-    currentPage--;
-    loadPage(currentPage);
+    alert('Please write your answer.');
   }
 }
 
-// Navigate to the Next Page
-function nextPage() {
-  if (currentPage < pages.length - 1) {
-    currentPage++;
-    loadPage(currentPage);
-  }
+// Function to send the response via email (requires backend)
+function sendResponseToEmail(response) {
+  fetch('https://your-backend-url.com/send-email', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ answer: response }),
+  })
+    .then(res => res.json())
+    .then(data => alert('Response sent successfully!'))
+    .catch(err => alert('Failed to send response.'));
 }
 
-// Handle "Yes" Button on Page 4
-function handleYes() {
-  alert("Thank you! Moving to the next page...");
-  currentPage++;
-  loadPage(currentPage);
-}
+// Function for moving the "No" button to random positions
+let clickCount = 0;
+function moveNoButton() {
+  clickCount++;
+  const button = document.getElementById('no-button');
 
-// Handle "No" Button on Page 4
-function handleNo() {
-  noClickCount++;
-  if (noClickCount <= 7) {
-    // Randomly reposition the No button
-    const noBtn = document.getElementById("noBtn");
-    const x = Math.random() * 80 + 10; // Between 10% and 90%
-    const y = Math.random() * 80 + 10; // Between 10% and 90%
-    noBtn.style.position = "absolute";
-    noBtn.style.left = `${x}%`;
-    noBtn.style.top = `${y}%`;
+  if (clickCount < 7) {
+    // Randomize the button's position
+    button.style.position = 'absolute';
+    button.style.top = Math.random() * window.innerHeight + 'px';
+    button.style.left = Math.random() * window.innerWidth + 'px';
   } else {
-    alert("Fine, I'll let you click No!");
-    noClickCount = 0; // Reset counter for reuse if needed
+    // After 7 clicks, make the button clickable
+    button.onclick = () => alert('Finally clicked!');
   }
 }
 
-// Initial Page Load
-document.addEventListener("DOMContentLoaded", () => {
-  loadPage(currentPage);
-});
+// Function for handling photo selection
+function selectPhoto(photoId) {
+  const photos = document.querySelectorAll('.photo');
+  photos.forEach(photo => {
+    photo.classList.remove('selected');
+  });
+
+  const selectedPhoto = document.getElementById(photoId);
+  selectedPhoto.classList.add('selected');
+  alert('Galat jawab😑'); // Show wrong answer message
+}
+
+// Function to show the correct answer popup
+function showCorrectAnswer() {
+  alert('Sahi jawab hai...');
+  nextPage(currentPage + 1);
+}
