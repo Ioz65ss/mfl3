@@ -317,3 +317,21 @@ function moveImage(image) {
 
 // Initialize the first page
 renderPage();
+/* Center-align images for specific pages */
+.cutie-page img,
+.flower-page img,
+.gift-page img,
+.also-page img,
+.chocolate-page img {
+  display: block; /* Treat the image as a block element */
+  margin: 0 auto; /* Center the image horizontally */
+}
+
+/* Center-align text for these pages */
+.cutie-page p,
+.flower-page p,
+.gift-page p,
+.also-page p,
+.chocolate-page p {
+  text-align: center; /* Center the text */
+}
