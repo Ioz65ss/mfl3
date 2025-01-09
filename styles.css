@@ -132,3 +132,13 @@ p {
   transform: scale(1.1); /* Slight zoom on hover */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Add a shadow on hover */
 }
+/* Increase image size for specific pages */
+.cutie-page img,
+.flower-page img,
+.gift-page img,
+.also-page img {
+  width: 300px; /* Increase size as needed */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 15px; /* Add rounded corners if needed */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow */
+}
