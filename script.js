@@ -81,7 +81,7 @@ const pages = [
 },
   {
     content: `
-      <div class="gif"><img src="images/giphy.gif" alt="A beautiful image"></div>
+      <div class="gif"><img src="images/cat-cats.gif" alt="A beautiful image"></div>
       <p>Heheheheh😂, Galat jawab😗...</p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
@@ -91,7 +91,7 @@ const pages = [
   },
   {
     content: `
-      <div class="gif"><img src="images/giphy.gif" alt="A beautiful image"></div>
+      <div class="gif"><img src="images/cat-fight-cat.gif" alt="A beautiful image"></div>
       <p>Sahi jawab hai....</p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
