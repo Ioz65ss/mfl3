@@ -68,10 +68,10 @@ const pages = [
   content: `
     <p>Choose the most beautiful flower—</p>
     <div id="flowers" class="flowers-container">
-      <img src="flower1.jpg" alt="Flower 1" class="flower" onclick="moveImage(this)">
-      <img src="flower2.jpg" alt="Flower 2" class="flower" onclick="moveImage(this)">
-      <img src="flower3.jpg" alt="Flower 3" class="flower" onclick="moveImage(this)">
-      <img src="flower4.jpg" alt="Flower 4" class="flower" onclick="moveImage(this)">
+      <img src="images/4a5440463f5083d0771a3d1483d9f30f.jpg" alt="Flower 1" class="flower" onclick="moveImage(this)">
+      <img src="images/2e87322a5c7f7a304e365f68c18cb427.jpg" alt="Flower 2" class="flower" onclick="moveImage(this)">
+      <img src="images/3d413a4d87b45b6d673e6601bc7f4e84.jpg" alt="Flower 3" class="flower" onclick="moveImage(this)">
+      <img src="images/1adc9c527fb04c78c638c348010b0309.jpg" alt="Flower 4" class="flower" onclick="moveImage(this)">
     </div>
     <div class="navigation">
       <button onclick="prevPage()">Previous</button>
