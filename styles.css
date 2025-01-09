@@ -79,3 +79,36 @@ p {
 .hidden {
   display: none;
 }
+
+/* Add this to your existing styles.css file */
+.flowers-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns */
+  grid-gap: 10px; /* Space between images */
+  width: 100%;
+  height: auto;
+  justify-items: center; /* Center the images */
+  align-items: center; /* Center the images vertically */
+}
+
+.flower {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative; /* For interactive movements if needed */
+}
+
+.photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjust based on container width */
+  gap: 10px; /* Space between images */
+  justify-items: center; /* Center the images */
+  align-items: center; /* Center the images vertically */
+}
+
+.photo img, .photos img {
+  width: 100px;
+  height: auto;
+  border-radius: 10px;
+}
