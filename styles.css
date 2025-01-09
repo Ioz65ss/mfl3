@@ -170,17 +170,3 @@ p {
   text-align: center; /* Center the text */
   font-size: 20px; /* Make the text slightly larger */
 }
-.photos {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two columns for the images */
-  gap: 20px; /* Space between images */
-  justify-content: center; /* Center the grid horizontally */
-  align-items: center; /* Center the images vertically within the grid */
-}
-
-.photos img {
-  width: 100%; /* Images will take full width of the grid cell */
-  max-width: 200px; /* Limit the image size */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 10px; /* Add rounded corners */
-}
