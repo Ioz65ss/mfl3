@@ -36,6 +36,7 @@ const pages = [
   },
   {
     content: `
+      <div class="gif"><img src="images/giphy.gif" alt="A beautiful image"></div>
       <p>Thank you, apko ek reward milega worth 7 crore.</p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
@@ -45,6 +46,7 @@ const pages = [
   },
   {
     content: `
+      <div class="gif"><img src="images/giphy.gif" alt="A beautiful image"></div>
       <p>Itni jaldi nhi, apko ko thora mehenat krna parega😇</p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
@@ -54,6 +56,7 @@ const pages = [
   },
   {
     content: `
+      <div class="gif"><img src="images/giphy.gif" alt="A beautiful image"></div>
       <p>Next page mai sawal ka jawab dijiye aur le jaiye gift worth 7 Cr.</p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
@@ -78,6 +81,7 @@ const pages = [
 },
   {
     content: `
+      <div class="gif"><img src="images/giphy.gif" alt="A beautiful image"></div>
       <p>Heheheheh😂, Galat jawab😗...</p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
@@ -87,6 +91,7 @@ const pages = [
   },
   {
     content: `
+      <div class="gif"><img src="images/giphy.gif" alt="A beautiful image"></div>
       <p>Sahi jawab hai....</p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
@@ -107,6 +112,7 @@ const pages = [
   },
   {
     content: `
+      <div class="gif"><img src="images/giphy.gif" alt="A beautiful image"></div>
       <p>Kya ap gift ke liye taiyar hai???</p>
       <button onclick="nextPage()">Yes</button>
     `,
@@ -126,6 +132,7 @@ class="photos"><img src="images/giphy.gif" alt="A beautiful image"></div>
   },
   {
     content: `
+      <div class="gif"><img src="images/giphy.gif" alt="A beautiful image"></div>
       <p>Galat jawab dene par bhi apko 7Cr ka reward mil gaya apko😞</p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
@@ -135,6 +142,7 @@ class="photos"><img src="images/giphy.gif" alt="A beautiful image"></div>
   },
   {
     content: `
+      <div class="gif"><img src="images/giphy.gif" alt="A beautiful image"></div>
       <p>Areee, itni jaldi bhi kya hai???</p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
@@ -144,6 +152,7 @@ class="photos"><img src="images/giphy.gif" alt="A beautiful image"></div>
   },
   {
     content: `
+      <div class="gif"><img src="images/giphy.gif" alt="A beautiful image"></div>
       <p>Aj apne bohot mehenat krke exam diya hai🥺💯</p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
