@@ -18,7 +18,7 @@ const pages = [
   },
   {
     content: `
-      <div class="gif"><img src="images/giphy.gif" alt="A beautiful image"></div>
+      <div class="gif"><img src="images/15462ed447e25356837b32a7e22e538f.gif" alt="A beautiful image"></div>
       <p>I know, ap ko thora dukh diya hai mene🤕</p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
