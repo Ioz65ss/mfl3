@@ -2,7 +2,7 @@ const pages = [
   {
     content: `
       <div class="gif"><img src="images/00658f6b219b55ea1d0d1cd804acfbe8.gif" alt="A beautiful image"></div>
-      <p>Hello 👋</p>
+      <p>Hellooo 👋</p>
       <div class="navigation">
         <button onclick="nextPage()">Next</button>
       </div>
@@ -11,7 +11,7 @@ const pages = [
   {
     content: `
       <div class="gif"><img src="images/cat.gif" alt="A beautiful image"></div>
-      <p>Kesi hai ap👉🏻👈🏻??? Sach sach batana😿</p>
+      <p>Kesi hai Aap Madam Ji👉🏻👈🏻??? Sach sach batana😿</p>
       <button onclick="chooseResponse('thik')">Thik hoon ❤</button>
       <button onclick="chooseResponse('bindass')">Ekdum bindass hoon ❤</button>
     `,
@@ -19,7 +19,7 @@ const pages = [
   {
     content: `
       <div class="gif"><img src="images/6414409adb5d8ef8957ace623b1fe8da.gif" alt="A beautiful image"></div>
-      <p>I know, ap ko thora dukh diya hai mene🤕</p>
+      <p>I know, Aap ko Thora Dukh diya hai Maine🤕</p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
         <button onclick="nextPage()">Next</button>
@@ -29,15 +29,15 @@ const pages = [
   {
     content: `
       <div class="gif"><img src="images/15462ed447e25356837b32a7e22e538f.gif" alt="A beautiful image"></div>
-      <p>Kya ap mujhe maaf karengi ❤???</p>
-      <button onclick="handleForgive('yes')">Yes</button>
-      <button id="noButton" onclick="handleForgive('no')">No</button>
+      <p>Kya Aap Mujhe Maaf kiye hai❤??? Aap na nhi kar sakti🗿</p>
+      <button onclick="handleForgive('yes')">Haa❤</button>
+      <button id="noButton" onclick="handleForgive('no')">Nahi😤</button>
     `,
   },
   {
     content: `
       <div class="gif"><img src="images/happy-cat-cat.gif" alt="A beautiful image"></div>
-      <p>Thank you, apko ek reward milega worth 7 crore.</p>
+      <p>Thank youuu😂, Aapko ek Reward Milega worth 7 crore.</p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
         <button onclick="nextPage()">Next</button>
@@ -47,7 +47,7 @@ const pages = [
   {
     content: `
       <div class="gif"><img src="images/mochi-mochi-peach-cat-cute.gif" alt="A beautiful image"></div>
-      <p>Itni jaldi nhi, apko ko thora mehenat krna parega😇</p>
+      <p>Itni bhi Jaldi Kya hai Madam Ji😁, apko ko thora mehenat krna parega😇</p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
         <button onclick="nextPage()">Next</button>
@@ -57,7 +57,7 @@ const pages = [
   {
     content: `
       <div class="gif"><img src="images/cute-cat.gif" alt="A beautiful image"></div>
-      <p>Next page mai sawal ka jawab dijiye aur le jaiye gift worth 7 Cr.</p>
+      <p>Aap Ek Sawal ka Jawab Dijiye aur Le Jaiye Gift worth 7 Cr.</p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
         <button onclick="nextPage()">Next</button>
@@ -66,7 +66,7 @@ const pages = [
   },
   {
   content: `
-    <p>Choose the most beautiful flower—</p>
+    <p>Tap on the most beautiful flower—</p>
     <div id="flowers" class="flowers-container">
       <img src="images/4a5440463f5083d0771a3d1483d9f30f.jpg" alt="Flower 1" class="flower" onclick="moveImage(this)">
       <img src="images/2e87322a5c7f7a304e365f68c18cb427.jpg" alt="Flower 2" class="flower" onclick="moveImage(this)">
@@ -82,7 +82,7 @@ const pages = [
   {
     content: `
       <div class="gif"><img src="images/cat-cats.gif" alt="A beautiful image"></div>
-      <p>Heheheheh😂, Galat jawab😗...</p>
+      <p>Heheheheh😂,Saare Galat hai Kya??😗...</p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
         <button onclick="nextPage()">Next</button>
@@ -92,7 +92,7 @@ const pages = [
   {
     content: `
       <div class="gif"><img src="images/cat-fight-cat.gif" alt="A beautiful image"></div>
-      <p>Sahi jawab hai....</p>
+      <p>Sahi Jawab Khud Dekh Lijiye👉🏻</p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
         <button onclick="nextPage()">Next</button>
@@ -104,8 +104,8 @@ const pages = [
     <div class="photos cutie-page">
       <img src="images/🎀_20250109_124412_0000.jpg" alt="Image 1">
     </div>
-    <p>Ji bilkul sahi samjhe, Ap he ho cutie🎀😚</p>
-    <p>Ap bilkul meri lagti ho❤🎀</p>
+    <p>Ji Kya Soch Rhi Hai Aap??? Aap he Khud Jawab ho Cutie🎀😚</p>
+    <p>Aap bilkul meri lagti ho❤🎀</p>
     <div class="navigation">
       <button onclick="prevPage()">Previous</button>
       <button onclick="nextPage()">Next</button>
@@ -115,13 +115,13 @@ const pages = [
   {
     content: `
       <div class="gif"><img src="images/cat-fight-cat.gif" alt="A beautiful image"></div>
-      <p>Kya ap gift ke liye taiyar hai???</p>
+      <p>Jaate Jaate Ek Gift Le Jaiye...</p>
       <button onclick="nextPage()">Yes</button>
     `,
   },
   {
     content: `
-      <p>Ye lijiye mera dil❤,It is worth 7Cr. Just for you😊</p>
+      <p>Ye Lijiye mera dil❤,It is worth 7Cr. Just for you😊</p>
       <div class="photos"><img src="images/giphy.gif" alt="A beautiful image"
 class="photos"><img src="images/c510f48976065f0daf6d023a6097fd99.gif" alt="A beautiful image"
 class="photos"><img src="images/heres-my-heart-heart.gif" alt="A beautiful image"
@@ -135,7 +135,7 @@ class="photos"><img src="images/b44a539b46f239d3b7852c28ce89da12.gif" alt="A bea
   {
     content: `
       <div class="gif"><img src="images/b6ab1c7de235b7fd5948d1f7a8da9508.jpg" alt="A beautiful image"></div>
-      <p>Galat jawab dene par bhi apko 7Cr ka reward mil gaya apko😞</p>
+      <p>Galat Jawab Dene Par Bhi Aapko 7Cr ka Reward Mil Gaya Aapko😞</p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
         <button onclick="nextPage()">Next</button>
@@ -145,7 +145,7 @@ class="photos"><img src="images/b44a539b46f239d3b7852c28ce89da12.gif" alt="A bea
   {
     content: `
       <div class="gif"><img src="images/yaseen.gif" alt="A beautiful image"></div>
-      <p>Areee, itni jaldi bhi kya hai???</p>
+      <p>Rukiye Rukiye, Itni Jaldi Bhi Kya Hai???</p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
         <button onclick="nextPage()">Next</button>
@@ -155,7 +155,7 @@ class="photos"><img src="images/b44a539b46f239d3b7852c28ce89da12.gif" alt="A bea
   {
     content: `
       <div class="gif"><img src="images/chal-mere-ghode.gif" alt="A beautiful image"></div>
-      <p>Aj apne bohot mehenat krke exam diya hai🥺💯</p>
+      <p>Kal Aapne Bohot Mehenat karke Exam Diya Tha🥺💯</p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
         <button onclick="nextPage()">Next</button>
@@ -167,7 +167,7 @@ class="photos"><img src="images/b44a539b46f239d3b7852c28ce89da12.gif" alt="A bea
     <div class="photos chocolate-page">
       <img src="images/0a52e446b0c3ab5f7bf8968838378217.jpg" alt="Chocolate Image">
     </div>
-    <p>Ye lijiye apke liye ek chocolate 😋🍫</p>
+    <p>Ye Lijiye, Aapke Liye Chocolates😋🍫</p>
     <div class="navigation">
       <button onclick="prevPage()">Previous</button>
       <button onclick="nextPage()">Next</button>
@@ -200,7 +200,7 @@ class="photos"><img src="images/b44a539b46f239d3b7852c28ce89da12.gif" alt="A bea
     <div class="photos gift-page">
       <img src="images/141eae9236832d186696822d6883985a.jpg" alt="Gift Image">
     </div>
-    <p>Ye lijiye</p>
+    <p>Ye Lijiye</p>
     <div class="navigation">
       <button onclick="prevPage()">Previous</button>
       <button onclick="nextPage()">Next</button>
@@ -221,7 +221,7 @@ class="photos"><img src="images/b44a539b46f239d3b7852c28ce89da12.gif" alt="A bea
 },
   {
     content: `
-      <p>I hope tumhe bore nhi laga hoga. Apna dhyan rakhiyega❤</p>
+      <p>I hope tumhe bore nhi laga hoga. Yahi khatam hota hai. Sorry, late se bhejne ke liye.../p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
       </div>
