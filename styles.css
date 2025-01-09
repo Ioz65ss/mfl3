@@ -1,21 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fde8d9; /* Light peach color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  color: #4a4a4a; /* Soft dark gray for text */
 }
 
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    gap: 10px; /* Adjust spacing between images */
-    justify-content: center;
-    align-items: center;
-    margin: 20px;
+#app {
+  text-align: center;
+  width: 90%;
+  max-width: 600px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for the container */
+  border-radius: 15px; /* Rounded corners for the container */
+  background: white; /* Add contrast against the peach background */
 }
 
-.image-grid img {
-    max-width: 100px; /* Adjust size as needed */
-    height: auto;
-    border: 2px solid #ccc; /* Optional: Add a border for styling */
-    border-radius: 5px; /* Optional: Rounded corners */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Shadow effect */
+img, .gif {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+button {
+  padding: 12px 25px;
+  margin: 10px;
+  border: none;
+  border-radius: 20px;
+  font-size: 18px; /* Increased button font size */
+  font-weight: bold; /* Bold button text */
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(45deg, #ff758c, #ff7eb3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: scale(1.1); /* Slightly larger on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.flowers-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+
+.flower {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation button {
+  flex: 1;
+  margin: 0 5px;
+}
+
+p {
+  font-size: 20px; /* Larger font size for text */
+  font-weight: 600; /* Semi-bold text */
+  line-height: 1.6; /* Add better readability */
+}
+
+.hidden {
+  display: none;
 }
