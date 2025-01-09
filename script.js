@@ -99,17 +99,19 @@ const pages = [
       </div>
     `,
   },
-  {
-    content: `
-      <div class="photo"><img src="images/🎀_20250109_124412_0000.jpg" alt="A beautiful image"></div>
-      <p>Ji bilkul sahi samjhe, Ap he ho cutie🎀😚</p>
-      <p>Ap bilkul meri lagti ho❤🎀</p>
-      <div class="navigation">
-        <button onclick="prevPage()">Previous</button>
-        <button onclick="nextPage()">Next</button>
-      </div>
-    `,
-  },
+{
+  content: `
+    <div class="photos cutie-page">
+      <img src="images/🎀_20250109_124412_0000.jpg" alt="Image 1">
+    </div>
+    <p>Ji bilkul sahi samjhe, Ap he ho cutie🎀😚</p>
+    <p>Ap bilkul meri lagti ho❤🎀</p>
+    <div class="navigation">
+      <button onclick="prevPage()">Previous</button>
+      <button onclick="nextPage()">Next</button>
+    </div>
+  `,
+},
   {
     content: `
       <div class="gif"><img src="images/cat-fight-cat.gif" alt="A beautiful image"></div>
@@ -161,15 +163,17 @@ class="photos"><img src="images/b44a539b46f239d3b7852c28ce89da12.gif" alt="A bea
     `,
   },
   {
-    content: `
-      <div class="photo"><img src="images/0a52e446b0c3ab5f7bf8968838378217.jpg" alt="A beautiful image"</div>
-      <p>Ye lijiye apke liye ek chocolate 😋🍫</p>
-      <div class="navigation">
-        <button onclick="prevPage()">Previous</button>
-        <button onclick="nextPage()">Next</button>
-      </div>
-    `,
-  },
+  content: `
+    <div class="photos chocolate-page">
+      <img src="images/0a52e446b0c3ab5f7bf8968838378217.jpg" alt="Chocolate Image">
+    </div>
+    <p>Ye lijiye apke liye ek chocolate 😋🍫</p>
+    <div class="navigation">
+      <button onclick="prevPage()">Previous</button>
+      <button onclick="nextPage()">Next</button>
+    </div>
+  `,
+},
   {
     content: `
       <p>Ohhh, aur ek chiz</p>
@@ -179,36 +183,42 @@ class="photos"><img src="images/b44a539b46f239d3b7852c28ce89da12.gif" alt="A bea
       </div>
     `,
   },
-  {
-    content: `
-      <div class="photo"><img src="images/f851734ad5ac51a4550ae8d08cd7cf32.jpg" alt="A beautiful image"></div>
-      <p>Meri pyari si fool ke liye pyara sa phool🌺😊</p>
-      <div class="navigation">
-        <button onclick="prevPage()">Previous</button>
-        <button onclick="nextPage()">Next</button>
-      </div>
-    `,
-  },
-  {
-    content: `
-      <div class="photo"><img src="images/141eae9236832d186696822d6883985a.jpg" alt="A beautiful image"></div>
-      <p>Ye lijiye</p>
-      <div class="navigation">
-        <button onclick="prevPage()">Previous</button>
-        <button onclick="nextPage()">Next</button>
-      </div>
-    `,
-  },
-  {
-    content: `
-      <div class="photo"><img src="images/d82acd6891fc8cc98dfbd4db9604e53c.jpg" alt="A beautiful image"></div>
-      <p>Aur ye bhi</p>
-      <div class="navigation">
-        <button onclick="prevPage()">Previous</button>
-        <button onclick="nextPage()">Next</button>
-      </div>
-    `,
-  },
+{
+  content: `
+    <div class="photos flower-page">
+      <img src="images/f851734ad5ac51a4550ae8d08cd7cf32.jpg" alt="Flower Image">
+    </div>
+    <p>Meri pyari si fool ke liye pyara sa phool🌺😊</p>
+    <div class="navigation">
+      <button onclick="prevPage()">Previous</button>
+      <button onclick="nextPage()">Next</button>
+    </div>
+  `,
+},
+{
+  content: `
+    <div class="photos gift-page">
+      <img src="images/141eae9236832d186696822d6883985a.jpg" alt="Gift Image">
+    </div>
+    <p>Ye lijiye</p>
+    <div class="navigation">
+      <button onclick="prevPage()">Previous</button>
+      <button onclick="nextPage()">Next</button>
+    </div>
+  `,
+},
+{
+  content: `
+    <div class="photos also-page">
+      <img src="images/d82acd6891fc8cc98dfbd4db9604e53c.jpg" alt="Another Image">
+    </div>
+    <p>Aur ye bhi</p>
+    <div class="navigation">
+      <button onclick="prevPage()">Previous</button>
+      <button onclick="nextPage()">Next</button>
+    </div>
+  `,
+},
   {
     content: `
       <p>I hope tumhe bore nhi laga hoga. Apna dhyan rakhiyega❤</p>
