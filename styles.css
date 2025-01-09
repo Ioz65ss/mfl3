@@ -170,3 +170,26 @@ p {
   text-align: center; /* Center the text */
   font-size: 20px; /* Make the text slightly larger */
 }
+/* Specific styling for the "Ye lijiye mera dil" page */
+.photos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  grid-gap: 20px; /* Space between images */
+  justify-items: center; /* Center-align images horizontally */
+  align-items: center; /* Center-align images vertically */
+  width: 100%; /* Ensure full-width of the container */
+}
+
+.photos img {
+  width: 150px; /* Adjust the size of the images as needed */
+  height: auto; /* Maintain the aspect ratio */
+  border-radius: 10px; /* Optional: Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
+}
+
+/* Hover effect for better interactivity */
+.photos img:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
