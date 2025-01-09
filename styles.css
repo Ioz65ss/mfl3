@@ -101,10 +101,11 @@ p {
 
 .photos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjust based on container width */
+  grid-template-columns: repeat(2, 1fr); /* Always create two columns */
   gap: 10px; /* Space between images */
-  justify-items: center; /* Center the images */
+  justify-items: center; /* Center the images horizontally */
   align-items: center; /* Center the images vertically */
+  width: 100%; /* Ensure it spans the container */
 }
 
 .photo img, .photos img {
