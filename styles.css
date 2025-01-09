@@ -193,3 +193,21 @@ p {
   transform: scale(1.1); /* Slight zoom on hover */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
 }
+/* Center-align images for specific pages */
+.cutie-page img,
+.flower-page img,
+.gift-page img,
+.also-page img,
+.chocolate-page img {
+  display: block; /* Treat the image as a block element */
+  margin: 0 auto; /* Center the image horizontally */
+}
+
+/* Center-align text for these pages */
+.cutie-page p,
+.flower-page p,
+.gift-page p,
+.also-page p,
+.chocolate-page p {
+  text-align: center; /* Center the text */
+}
