@@ -17,65 +17,28 @@ body {
   width: 90%;
   max-width: 600px;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for the container */
-  border-radius: 15px; /* Rounded corners for the container */
-  background: white; /* Add contrast against the peach background */
-}
-
-img, .gif {
-  width: 100%;
-  height: auto;
-  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+  background: white;
   border-radius: 10px;
 }
 
-button {
-  padding: 12px 25px;
-  margin: 10px;
-  border: none;
-  border-radius: 20px;
-  font-size: 18px; /* Increased button font size */
-  font-weight: bold; /* Bold button text */
-  cursor: pointer;
-  color: white;
-  background: linear-gradient(45deg, #ff758c, #ff7eb3);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-button:hover {
-  transform: scale(1.1); /* Slightly larger on hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
-}
-
-.flowers-container {
-  position: relative;
-  width: 100%;
-  height: 300px;
-}
-
-.flower {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  cursor: pointer;
-}
-
-.navigation {
+/* Added styles for proper image arrangement */
+.image-container {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px; /* Space between images */
+  margin-top: 20px;
 }
 
-.navigation button {
-  flex: 1;
-  margin: 0 5px;
+.image-container img {
+  width: 100px; /* Fixed width for images */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
 }
 
-p {
-  font-size: 20px; /* Larger font size for text */
-  font-weight: 600; /* Semi-bold text */
-  line-height: 1.6; /* Add better readability */
-}
-
-.hidden {
-  display: none;
+.image-container img:hover {
+  transform: scale(1.1);
 }
