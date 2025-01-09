@@ -101,7 +101,7 @@ const pages = [
   },
   {
     content: `
-      <div class="photo"><img src="images/giphy.gif" alt="A beautiful image"></div>
+      <div class="photo"><img src="images/🎀_20250109_124412_0000.jpg" alt="A beautiful image"></div>
       <p>Ji bilkul sahi samjhe, Ap he ho cutie🎀😚</p>
       <p>Ap bilkul meri lagti ho❤🎀</p>
       <div class="navigation">
