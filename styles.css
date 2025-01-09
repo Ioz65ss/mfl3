@@ -149,3 +149,24 @@ p {
   border-radius: 15px; /* Optional: Rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow */
 }
+/* Common styling for all relevant pages */
+.photos {
+  display: flex;
+  justify-content: center; /* Center images horizontally */
+  align-items: center; /* Center images vertically */
+  flex-direction: column; /* Stack image and text vertically */
+  margin-bottom: 20px; /* Add spacing below the image */
+}
+
+.photos img {
+  max-width: 70%; /* Adjust to make the image moderately larger */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 15px; /* Rounded corners for aesthetic */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Center-align text for these pages */
+.cutie-page p, .flower-page p, .gift-page p, .extra-page p, .chocolate-page p {
+  text-align: center; /* Center the text */
+  font-size: 20px; /* Make the text slightly larger */
+}
