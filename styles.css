@@ -142,3 +142,10 @@ p {
   border-radius: 15px; /* Add rounded corners if needed */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow */
 }
+/* Increase image size for the chocolate page */
+.chocolate-page img {
+  width: 300px; /* Adjust the size as needed */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 15px; /* Optional: Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow */
+}
