@@ -1,7 +1,7 @@
 const pages = [
   {
     content: `
-      <div class="gif"><img src="images/giphy.gif" alt="A beautiful image"></div>
+      <div class="gif"><img src="images/00658f6b219b55ea1d0d1cd804acfbe8.gif" alt="A beautiful image"></div>
       <p>Hello 👋</p>
       <div class="navigation">
         <button onclick="nextPage()">Next</button>
