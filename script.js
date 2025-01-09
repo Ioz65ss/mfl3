@@ -10,7 +10,7 @@ const pages = [
   },
   {
     content: `
-      <div class="gif"><img src="images/giphy.gif" alt="A beautiful image"></div>
+      <div class="gif"><img src="images/cat.gif" alt="A beautiful image"></div>
       <p>Kesi hai ap👉🏻👈🏻??? Sach sach batana😿</p>
       <button onclick="chooseResponse('thik')">Thik hoon ❤</button>
       <button onclick="chooseResponse('bindass')">Ekdum bindass hoon ❤</button>
