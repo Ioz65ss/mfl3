@@ -36,7 +36,7 @@ const pages = [
   },
   {
     content: `
-      <div class="gif"><img src="images/giphy.gif" alt="A beautiful image"></div>
+      <div class="gif"><img src="images/happy-cat-cat.gif" alt="A beautiful image"></div>
       <p>Thank you, apko ek reward milega worth 7 crore.</p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
@@ -46,7 +46,7 @@ const pages = [
   },
   {
     content: `
-      <div class="gif"><img src="images/giphy.gif" alt="A beautiful image"></div>
+      <div class="gif"><img src="images/mochi-mochi-peach-cat-cute.gif" alt="A beautiful image"></div>
       <p>Itni jaldi nhi, apko ko thora mehenat krna parega😇</p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
@@ -56,7 +56,7 @@ const pages = [
   },
   {
     content: `
-      <div class="gif"><img src="images/giphy.gif" alt="A beautiful image"></div>
+      <div class="gif"><img src="images/cute-cat.gif" alt="A beautiful image"></div>
       <p>Next page mai sawal ka jawab dijiye aur le jaiye gift worth 7 Cr.</p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
