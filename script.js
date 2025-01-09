@@ -112,7 +112,7 @@ const pages = [
   },
   {
     content: `
-      <div class="gif"><img src="images/giphy.gif" alt="A beautiful image"></div>
+      <div class="gif"><img src="images/cat-fight-cat.gif" alt="A beautiful image"></div>
       <p>Kya ap gift ke liye taiyar hai???</p>
       <button onclick="nextPage()">Yes</button>
     `,
@@ -121,9 +121,9 @@ const pages = [
     content: `
       <p>Ye lijiye mera dil❤,It is worth 7Cr. Just for you😊</p>
       <div class="photos"><img src="images/giphy.gif" alt="A beautiful image"
-class="photos"><img src="images/giphy.gif" alt="A beautiful image"
-class="photos"><img src="images/giphy.gif" alt="A beautiful image"
-class="photos"><img src="images/giphy.gif" alt="A beautiful image"></div>
+class="photos"><img src="images/c510f48976065f0daf6d023a6097fd99.gif" alt="A beautiful image"
+class="photos"><img src="images/heres-my-heart-heart.gif" alt="A beautiful image"
+class="photos"><img src="images/b44a539b46f239d3b7852c28ce89da12.gif" alt="A beautiful image"></div>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
         <button onclick="nextPage()">Next</button>
@@ -132,7 +132,7 @@ class="photos"><img src="images/giphy.gif" alt="A beautiful image"></div>
   },
   {
     content: `
-      <div class="gif"><img src="images/giphy.gif" alt="A beautiful image"></div>
+      <div class="gif"><img src="images/b6ab1c7de235b7fd5948d1f7a8da9508.jpg" alt="A beautiful image"></div>
       <p>Galat jawab dene par bhi apko 7Cr ka reward mil gaya apko😞</p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
