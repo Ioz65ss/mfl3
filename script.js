@@ -221,7 +221,7 @@ class="photos"><img src="images/b44a539b46f239d3b7852c28ce89da12.gif" alt="A bea
 },
   {
     content: `
-      <p>I hope tumhe bore nhi laga hoga. Yahi khatam hota hai. Sorry, late se bhejne ke liye.../p>
+      <p>I hope tumhe bore nhi laga hoga. Yahi khatam hota hai. Sorry, late se bhejne ke liye...</p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
       </div>
