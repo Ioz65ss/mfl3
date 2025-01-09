@@ -18,7 +18,7 @@ const pages = [
   },
   {
     content: `
-      <div class="gif"><img src="images/15462ed447e25356837b32a7e22e538f.gif" alt="A beautiful image"></div>
+      <div class="gif"><img src="images/6414409adb5d8ef8957ace623b1fe8da.gif" alt="A beautiful image"></div>
       <p>I know, ap ko thora dukh diya hai mene🤕</p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
@@ -28,7 +28,7 @@ const pages = [
   },
   {
     content: `
-      <div class="gif"><img src="images/giphy.gif" alt="A beautiful image"></div>
+      <div class="gif"><img src="images/15462ed447e25356837b32a7e22e538f.gif" alt="A beautiful image"></div>
       <p>Kya ap mujhe maaf karengi ❤???</p>
       <button onclick="handleForgive('yes')">Yes</button>
       <button id="noButton" onclick="handleForgive('no')">No</button>
