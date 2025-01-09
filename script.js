@@ -142,7 +142,7 @@ class="photos"><img src="images/b44a539b46f239d3b7852c28ce89da12.gif" alt="A bea
   },
   {
     content: `
-      <div class="gif"><img src="images/giphy.gif" alt="A beautiful image"></div>
+      <div class="gif"><img src="images/yaseen.gif" alt="A beautiful image"></div>
       <p>Areee, itni jaldi bhi kya hai???</p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
@@ -152,7 +152,7 @@ class="photos"><img src="images/b44a539b46f239d3b7852c28ce89da12.gif" alt="A bea
   },
   {
     content: `
-      <div class="gif"><img src="images/giphy.gif" alt="A beautiful image"></div>
+      <div class="gif"><img src="images/chal-mere-ghode.gif" alt="A beautiful image"></div>
       <p>Aj apne bohot mehenat krke exam diya hai🥺💯</p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
@@ -162,7 +162,7 @@ class="photos"><img src="images/b44a539b46f239d3b7852c28ce89da12.gif" alt="A bea
   },
   {
     content: `
-      <div class="photo"><img src="images/giphy.gif" alt="A beautiful image"</div>
+      <div class="photo"><img src="images/0a52e446b0c3ab5f7bf8968838378217.jpg" alt="A beautiful image"</div>
       <p>Ye lijiye apke liye ek chocolate 😋🍫</p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
@@ -181,7 +181,7 @@ class="photos"><img src="images/b44a539b46f239d3b7852c28ce89da12.gif" alt="A bea
   },
   {
     content: `
-      <div class="photo"><img src="images/giphy.gif" alt="A beautiful image"></div>
+      <div class="photo"><img src="images/f851734ad5ac51a4550ae8d08cd7cf32.jpg" alt="A beautiful image"></div>
       <p>Meri pyari si fool ke liye pyara sa phool🌺😊</p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
@@ -191,7 +191,7 @@ class="photos"><img src="images/b44a539b46f239d3b7852c28ce89da12.gif" alt="A bea
   },
   {
     content: `
-      <div class="photo"><img src="images/giphy.gif" alt="A beautiful image"></div>
+      <div class="photo"><img src="images/141eae9236832d186696822d6883985a.jpg" alt="A beautiful image"></div>
       <p>Ye lijiye</p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
@@ -201,7 +201,7 @@ class="photos"><img src="images/b44a539b46f239d3b7852c28ce89da12.gif" alt="A bea
   },
   {
     content: `
-      <div class="photo"><img src="images/giphy.gif" alt="A beautiful image"></div>
+      <div class="photo"><img src="images/d82acd6891fc8cc98dfbd4db9604e53c.jpg" alt="A beautiful image"></div>
       <p>Aur ye bhi</p>
       <div class="navigation">
         <button onclick="prevPage()">Previous</button>
