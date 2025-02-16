@@ -259,7 +259,7 @@ function chooseResponse(response) {
 
 function handleForgive(choice) {
   if (choice === "yes") {
-    currentPage = 4; // Page 5 index
+    currentPage = 4;
     renderPage();
   } else {
     const noButton = document.getElementById("noButton");
@@ -299,7 +299,7 @@ function moveImage(image) {
             imageRect.bottom < siblingRect.top ||
             imageRect.top > siblingRect.bottom)
         ) {
-          return true; // Overlap detected
+          return true;
         }
       }
     }
@@ -315,5 +315,4 @@ function moveImage(image) {
   image.style.top = `${position.y}px`;
 }
 
-// Initialize the first page
 renderPage();
